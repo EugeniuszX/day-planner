@@ -8,18 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */; };
-		642FFC2227F72FE600BF5A89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC2127F72FE600BF5A89 /* ViewController.swift */; };
+		642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC2127F72FE600BF5A89 /* MainTabBarController.swift */; };
 		642FFC2727F72FE700BF5A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642FFC2627F72FE700BF5A89 /* Assets.xcassets */; };
 		642FFC2A27F72FE700BF5A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642FFC2827F72FE700BF5A89 /* LaunchScreen.storyboard */; };
+		64596B3D27F7567900679965 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B3C27F7567900679965 /* PlannerViewController.swift */; };
+		64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B3E27F7568B00679965 /* TasksViewController.swift */; };
+		64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B4027F7569F00679965 /* ContactsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		642FFC1A27F72FE600BF5A89 /* dayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		642FFC2127F72FE600BF5A89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		642FFC2127F72FE600BF5A89 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		642FFC2627F72FE700BF5A89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		642FFC2927F72FE700BF5A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		642FFC2B27F72FE700BF5A89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64596B3C27F7567900679965 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
+		64596B3E27F7568B00679965 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		64596B4027F7569F00679965 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +58,40 @@
 		642FFC1C27F72FE600BF5A89 /* dayPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */,
-				642FFC2127F72FE600BF5A89 /* ViewController.swift */,
-				642FFC2627F72FE700BF5A89 /* Assets.xcassets */,
-				642FFC2827F72FE700BF5A89 /* LaunchScreen.storyboard */,
-				642FFC2B27F72FE700BF5A89 /* Info.plist */,
+				64596B3927F7543000679965 /* Application */,
+				64596B3B27F7544000679965 /* Controllers */,
+				64596B3A27F7543A00679965 /* Resources */,
 			);
 			path = dayPlanner;
+			sourceTree = "<group>";
+		};
+		64596B3927F7543000679965 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		64596B3A27F7543A00679965 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				642FFC2827F72FE700BF5A89 /* LaunchScreen.storyboard */,
+				642FFC2627F72FE700BF5A89 /* Assets.xcassets */,
+				642FFC2B27F72FE700BF5A89 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		64596B3B27F7544000679965 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				642FFC2127F72FE600BF5A89 /* MainTabBarController.swift */,
+				64596B3C27F7567900679965 /* PlannerViewController.swift */,
+				64596B3E27F7568B00679965 /* TasksViewController.swift */,
+				64596B4027F7569F00679965 /* ContactsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				642FFC2227F72FE600BF5A89 /* ViewController.swift in Sources */,
+				64596B3D27F7567900679965 /* PlannerViewController.swift in Sources */,
+				64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */,
+				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
+				64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +311,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PD6BW53RL3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dayPlanner/Info.plist;
+				INFOPLIST_FILE = dayPlanner/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +340,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PD6BW53RL3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dayPlanner/Info.plist;
+				INFOPLIST_FILE = dayPlanner/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
