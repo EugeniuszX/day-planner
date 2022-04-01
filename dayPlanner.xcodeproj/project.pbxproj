@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */; };
-		642FFC2027F72FE600BF5A89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC1F27F72FE600BF5A89 /* SceneDelegate.swift */; };
 		642FFC2227F72FE600BF5A89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC2127F72FE600BF5A89 /* ViewController.swift */; };
 		642FFC2727F72FE700BF5A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642FFC2627F72FE700BF5A89 /* Assets.xcassets */; };
 		642FFC2A27F72FE700BF5A89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642FFC2827F72FE700BF5A89 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		642FFC1A27F72FE600BF5A89 /* dayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		642FFC1F27F72FE600BF5A89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		642FFC2127F72FE600BF5A89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		642FFC2627F72FE700BF5A89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		642FFC2927F72FE700BF5A89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */,
-				642FFC1F27F72FE600BF5A89 /* SceneDelegate.swift */,
 				642FFC2127F72FE600BF5A89 /* ViewController.swift */,
 				642FFC2627F72FE700BF5A89 /* Assets.xcassets */,
 				642FFC2827F72FE700BF5A89 /* LaunchScreen.storyboard */,
@@ -136,7 +133,6 @@
 			files = (
 				642FFC2227F72FE600BF5A89 /* ViewController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
-				642FFC2027F72FE600BF5A89 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
