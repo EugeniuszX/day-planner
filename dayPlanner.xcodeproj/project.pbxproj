@@ -14,9 +14,12 @@
 		64596B3D27F7567900679965 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B3C27F7567900679965 /* PlannerViewController.swift */; };
 		64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B3E27F7568B00679965 /* TasksViewController.swift */; };
 		64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B4027F7569F00679965 /* ContactsViewController.swift */; };
+		F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E70F45E309A463BB0BF18AC /* Pods-dayPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayPlanner.release.xcconfig"; path = "Target Support Files/Pods-dayPlanner/Pods-dayPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		45EA08310C24E8B790B2D028 /* Pods-dayPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayPlanner.debug.xcconfig"; path = "Target Support Files/Pods-dayPlanner/Pods-dayPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		642FFC1A27F72FE600BF5A89 /* dayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		642FFC2127F72FE600BF5A89 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		64596B3C27F7567900679965 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
 		64596B3E27F7568B00679965 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		64596B4027F7569F00679965 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3212F55DD4B1B58B95623138 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A9BB484FE3D4BB51CBBE106 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				45EA08310C24E8B790B2D028 /* Pods-dayPlanner.debug.xcconfig */,
+				3E70F45E309A463BB0BF18AC /* Pods-dayPlanner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		642FFC1127F72FE600BF5A89 = {
 			isa = PBXGroup;
 			children = (
 				642FFC1C27F72FE600BF5A89 /* dayPlanner */,
 				642FFC1B27F72FE600BF5A89 /* Products */,
+				3A9BB484FE3D4BB51CBBE106 /* Pods */,
+				3212F55DD4B1B58B95623138 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 642FFC2E27F72FE700BF5A89 /* Build configuration list for PBXNativeTarget "dayPlanner" */;
 			buildPhases = (
+				84E62C2734A58047B29D0935 /* [CP] Check Pods Manifest.lock */,
 				642FFC1627F72FE600BF5A89 /* Sources */,
 				642FFC1727F72FE600BF5A89 /* Frameworks */,
 				642FFC1827F72FE600BF5A89 /* Resources */,
+				9C36AAB49737A5044DE0669D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +184,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84E62C2734A58047B29D0935 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dayPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C36AAB49737A5044DE0669D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dayPlanner/Pods-dayPlanner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dayPlanner/Pods-dayPlanner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dayPlanner/Pods-dayPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		642FFC1627F72FE600BF5A89 /* Sources */ = {
@@ -304,6 +372,7 @@
 		};
 		642FFC2F27F72FE700BF5A89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45EA08310C24E8B790B2D028 /* Pods-dayPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +381,7 @@
 				DEVELOPMENT_TEAM = PD6BW53RL3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dayPlanner/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "day planner";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -333,6 +403,7 @@
 		};
 		642FFC3027F72FE700BF5A89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E70F45E309A463BB0BF18AC /* Pods-dayPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -341,6 +412,7 @@
 				DEVELOPMENT_TEAM = PD6BW53RL3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dayPlanner/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "day planner";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
