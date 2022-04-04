@@ -48,6 +48,32 @@ class PlannerTableViewCell: UITableViewCell {
         return label
     }()
     
+    let taskPriorityLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Priority: "
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next", size: 14)
+        label.textAlignment = .right
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
+    
+    let taskPriority: UILabel = {
+        let label = UILabel()
+         label.text = "Medium"
+         label.textColor = .black
+         label.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
+         label.textAlignment = .left
+         label.adjustsFontSizeToFitWidth = true
+         label.translatesAutoresizingMaskIntoConstraints = false
+         label.backgroundColor = .red
+         
+         return label
+    }()
+    
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -66,6 +92,7 @@ class PlannerTableViewCell: UITableViewCell {
     func setConstraints() {
         let topStackView = UIStackView(arrangedSubviews: [taskName, userName], axis: .horizontal, spacing: 10, distribution: .fillEqually)
         
+
         self.addSubview(topStackView)
         NSLayoutConstraint.activate([
             topStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
@@ -80,6 +107,18 @@ class PlannerTableViewCell: UITableViewCell {
             taskTime.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             taskTime.widthAnchor.constraint(equalToConstant: 100),
             taskTime.heightAnchor.constraint(equalToConstant: 25)
+        ])
+        
+        
+        let bottomStackView = UIStackView(arrangedSubviews: [taskPriorityLabel,taskPriority ], axis: .horizontal, spacing: 5, distribution: .fillProportionally )
+        
+        
+        self.addSubview(bottomStackView)
+        NSLayoutConstraint.activate([
+            bottomStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            bottomStackView.leadingAnchor.constraint(equalTo: taskTime.trailingAnchor, constant: 5),
+            bottomStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
         
