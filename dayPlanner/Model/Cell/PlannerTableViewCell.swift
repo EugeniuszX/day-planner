@@ -8,11 +8,11 @@
 import UIKit
 
 class PlannerTableViewCell: UITableViewCell {
-    let taskName = UILabel(text: "Go to shoppping", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
-    let userName = UILabel(text: "Melber17", font: UIFont(name: "Avenir Next", size: 20), alignment: .right)
-    let taskTime = UILabel(text: "10:00", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
-    let taskPriorityLabel = UILabel(text: "Priority:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
-    let taskPriority = UILabel(text: "Medium", font: UIFont(name: "Avenir Next Demi Bold", size: 14) , alignment: .left)
+    let taskName = UILabel(text: "Go to shoppping", font: .avenirNextDemiBold20(), alignment: .left)
+    let userName = UILabel(text: "Melber17", font: .avenirNext20(), alignment: .right)
+    let taskTime = UILabel(text: "10:00", font: .avenirNextDemiBold20(), alignment: .left)
+    let taskPriorityLabel = UILabel(text: "Priority:", font: .avenirNext14(), alignment: .right)
+    let taskPriority = UILabel(text: "Medium", font: .avenirNext14() , alignment: .left)
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
