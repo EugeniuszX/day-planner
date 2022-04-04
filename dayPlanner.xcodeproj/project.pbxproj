@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */; };
 		642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */; };
 		642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642FFC2127F72FE600BF5A89 /* MainTabBarController.swift */; };
 		642FFC2727F72FE700BF5A89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642FFC2627F72FE700BF5A89 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		3E70F45E309A463BB0BF18AC /* Pods-dayPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayPlanner.release.xcconfig"; path = "Target Support Files/Pods-dayPlanner/Pods-dayPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		45EA08310C24E8B790B2D028 /* Pods-dayPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dayPlanner.debug.xcconfig"; path = "Target Support Files/Pods-dayPlanner/Pods-dayPlanner.debug.xcconfig"; sourceTree = "<group>"; };
+		641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerTableViewCell.swift; sourceTree = "<group>"; };
 		642FFC1A27F72FE600BF5A89 /* dayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642FFC1D27F72FE600BF5A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		642FFC2127F72FE600BF5A89 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		641A3B7B27FA2A3800D42054 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				641A3B7C27FA2A4400D42054 /* Cell */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		641A3B7C27FA2A4400D42054 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		642FFC1127F72FE600BF5A89 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +102,7 @@
 			children = (
 				64596B3927F7543000679965 /* Application */,
 				64596B3B27F7544000679965 /* Controllers */,
+				641A3B7B27FA2A3800D42054 /* Model */,
 				64596B3A27F7543A00679965 /* Resources */,
 			);
 			path = dayPlanner;
@@ -236,6 +255,7 @@
 				64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */,
 				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
+				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
 				64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

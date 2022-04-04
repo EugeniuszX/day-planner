@@ -28,6 +28,14 @@ class PlannerViewController: UIViewController {
         return button
     }()
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    let idPlannerCell = "idPlannerCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -39,6 +47,10 @@ class PlannerViewController: UIViewController {
         calendar.dataSource = self
         
         calendar.scope = .week
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(PlannerTableViewCell.self, forCellReuseIdentifier: idPlannerCell)
         
         setConstraints()
         swipeActions()
@@ -71,6 +83,25 @@ class PlannerViewController: UIViewController {
         handleToggleVisibleCalendar()
     }
 }
+
+// MARK: UITableViewDelegate, UITableViewDataSource
+
+
+extension PlannerViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idPlannerCell, for: indexPath) as! PlannerTableViewCell
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+}
+
 
 // MARK: FSCalendarDataSource, FSCalendarDelegate
 
@@ -108,6 +139,15 @@ extension PlannerViewController {
             toggleVisibleButton.widthAnchor.constraint(equalToConstant: 100),
             toggleVisibleButton.heightAnchor.constraint(equalToConstant: 20)
        
+        ])
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: toggleVisibleButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 }
