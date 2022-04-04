@@ -30,6 +30,7 @@ class PlannerViewController: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.bounces = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -89,7 +90,7 @@ class PlannerViewController: UIViewController {
 
 extension PlannerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,7 +99,7 @@ extension PlannerViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 80
     }
 }
 

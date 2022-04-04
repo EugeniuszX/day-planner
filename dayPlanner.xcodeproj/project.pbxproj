@@ -18,6 +18,8 @@
 		64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B4027F7569F00679965 /* ContactsViewController.swift */; };
 		64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D6E27FB0EF200B69D7C /* UILabel.swift */; };
 		64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7027FB3BA000B69D7C /* UIFont.swift */; };
+		64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */; };
+		64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */; };
 		F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		64596B4027F7569F00679965 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		64EB5D6E27FB0EF200B69D7C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		64EB5D7027FB3BA000B69D7C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */,
+				64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				64596B3B27F7544000679965 /* Controllers */,
 				641A3B7B27FA2A3800D42054 /* Model */,
 				641A3B8027FAEE9000D42054 /* Extensions */,
+				64EB5D7427FB770200B69D7C /* Protocols */,
 				64596B3A27F7543A00679965 /* Resources */,
 			);
 			path = dayPlanner;
@@ -160,6 +166,14 @@
 				64596B4027F7569F00679965 /* ContactsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		64EB5D7427FB770200B69D7C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +296,8 @@
 				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
 				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
+				64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */,
+				64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */,
 				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,
 				64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */,
 				64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */,

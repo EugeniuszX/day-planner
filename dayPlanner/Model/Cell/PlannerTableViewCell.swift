@@ -8,11 +8,11 @@
 import UIKit
 
 class PlannerTableViewCell: UITableViewCell {
-    let taskName = UILabel(text: "Go to shoppping", font: .avenirNextDemiBold20(), alignment: .left)
-    let userName = UILabel(text: "Melber17", font: .avenirNext20(), alignment: .right)
-    let taskTime = UILabel(text: "10:00", font: .avenirNextDemiBold20(), alignment: .left)
+    let taskName = UILabel(text: "Go to shoppping", font: .avenirNextDemiBold20())
+    let userName = UILabel(text: "Melber17", font: .avenirNextDemiBold14(), alignment: .right)
+    let taskTime = UILabel(text: "10:00", font: .avenirNextDemiBold20())
     let taskPriorityLabel = UILabel(text: "Priority:", font: .avenirNext14(), alignment: .right)
-    let taskPriority = UILabel(text: "Medium", font: .avenirNext14() , alignment: .left)
+    let taskPriority = UILabel(text: "Medium", font: .avenirNext14())
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -22,6 +22,7 @@ class PlannerTableViewCell: UITableViewCell {
             setConstraints()
         }
 
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {

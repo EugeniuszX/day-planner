@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UILabel {
-    convenience init(text: String, font: UIFont?, alignment: NSTextAlignment) {
+    convenience init(text: String, font: UIFont?, alignment: NSTextAlignment = .left) {
         self.init()
         
         self.text = text
@@ -18,6 +18,5 @@ extension UILabel {
         self.textAlignment = alignment
         self.adjustsFontSizeToFitWidth = true
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .red
     }
 }
