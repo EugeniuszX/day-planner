@@ -35,6 +35,19 @@ class PlannerTableViewCell: UITableViewCell {
         return label
     }()
     
+    let taskTime: UILabel = {
+       let label = UILabel()
+        label.text = "10:00"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next", size: 20)
+        label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
+    
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -51,22 +64,41 @@ class PlannerTableViewCell: UITableViewCell {
     }
     
     func setConstraints() {
-        self.addSubview(taskName)
+        let topStackView = UIStackView(arrangedSubviews: [taskName, userName], axis: .horizontal, spacing: 10, distribution: .fillEqually)
         
+        self.addSubview(topStackView)
         NSLayoutConstraint.activate([
-            taskName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            taskName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            taskName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
-            taskName.heightAnchor.constraint(equalToConstant: 25)
+            topStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            topStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            topStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            topStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
-        self.addSubview(userName)
+        self.addSubview(taskTime)
         NSLayoutConstraint.activate([
-            userName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            userName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-            userName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
-            userName.heightAnchor.constraint(equalToConstant: 25)
+            taskTime.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            taskTime.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            taskTime.widthAnchor.constraint(equalToConstant: 100),
+            taskTime.heightAnchor.constraint(equalToConstant: 25)
         ])
+        
+        
+//        self.addSubview(taskName)
+//
+//        NSLayoutConstraint.activate([
+//            taskName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+//            taskName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+//            taskName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
+//            taskName.heightAnchor.constraint(equalToConstant: 25)
+//        ])
+//
+//        self.addSubview(userName)
+//        NSLayoutConstraint.activate([
+//            userName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+//            userName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+//            userName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
+//            userName.heightAnchor.constraint(equalToConstant: 25)
+//        ])
     }
     
 }
