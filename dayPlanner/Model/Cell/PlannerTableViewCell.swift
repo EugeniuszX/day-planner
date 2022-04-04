@@ -8,72 +8,11 @@
 import UIKit
 
 class PlannerTableViewCell: UITableViewCell {
-    
-    let taskName: UILabel = {
-       let label = UILabel()
-        label.text = "Go to shopping"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next Demi Bold", size: 20)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .red
-        
-        return label
-    }()
-    
-    let userName: UILabel = {
-       let label = UILabel()
-        label.text = "Melber17"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next", size: 20)
-        label.textAlignment = .right
-        label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .red
-        
-        return label
-    }()
-    
-    let taskTime: UILabel = {
-       let label = UILabel()
-        label.text = "10:00"
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next", size: 20)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .red
-        
-        return label
-    }()
-    
-    let taskPriorityLabel: UILabel = {
-       let label = UILabel()
-        label.text = "Priority: "
-        label.textColor = .black
-        label.font = UIFont(name: "Avenir Next", size: 14)
-        label.textAlignment = .right
-        label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .red
-        
-        return label
-    }()
-    
-    let taskPriority: UILabel = {
-        let label = UILabel()
-         label.text = "Medium"
-         label.textColor = .black
-         label.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
-         label.textAlignment = .left
-         label.adjustsFontSizeToFitWidth = true
-         label.translatesAutoresizingMaskIntoConstraints = false
-         label.backgroundColor = .red
-         
-         return label
-    }()
-    
+    let taskName = UILabel(text: "Go to shoppping", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
+    let userName = UILabel(text: "Melber17", font: UIFont(name: "Avenir Next", size: 20), alignment: .right)
+    let taskTime = UILabel(text: "10:00", font: UIFont(name: "Avenir Next Demi Bold", size: 20), alignment: .left)
+    let taskPriorityLabel = UILabel(text: "Priority:", font: UIFont(name: "Avenir Next", size: 14), alignment: .right)
+    let taskPriority = UILabel(text: "Medium", font: UIFont(name: "Avenir Next Demi Bold", size: 14) , alignment: .left)
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -120,24 +59,6 @@ class PlannerTableViewCell: UITableViewCell {
             bottomStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
             bottomStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
-        
-        
-//        self.addSubview(taskName)
-//
-//        NSLayoutConstraint.activate([
-//            taskName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-//            taskName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-//            taskName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
-//            taskName.heightAnchor.constraint(equalToConstant: 25)
-//        ])
-//
-//        self.addSubview(userName)
-//        NSLayoutConstraint.activate([
-//            userName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-//            userName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-//            userName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
-//            userName.heightAnchor.constraint(equalToConstant: 25)
-//        ])
     }
     
 }

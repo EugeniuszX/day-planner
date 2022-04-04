@@ -16,6 +16,7 @@
 		64596B3D27F7567900679965 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B3C27F7567900679965 /* PlannerViewController.swift */; };
 		64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B3E27F7568B00679965 /* TasksViewController.swift */; };
 		64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64596B4027F7569F00679965 /* ContactsViewController.swift */; };
+		64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D6E27FB0EF200B69D7C /* UILabel.swift */; };
 		F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		64596B3C27F7567900679965 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
 		64596B3E27F7568B00679965 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		64596B4027F7569F00679965 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		64EB5D6E27FB0EF200B69D7C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				641A3B8227FAEF0A00D42054 /* UIStackView.swift */,
+				64EB5D6E27FB0EF200B69D7C /* UILabel.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
 				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
+				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,
 				64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
