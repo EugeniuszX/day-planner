@@ -22,6 +22,7 @@
 		64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */; };
 		64EB5D7827FC878800B69D7C /* OptionsPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7727FC878800B69D7C /* OptionsPlannerTableViewController.swift */; };
 		64EB5D8027FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */; };
+		64EB5D8227FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D8127FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift */; };
 		F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		64EB5D7727FC878800B69D7C /* OptionsPlannerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerTableViewController.swift; sourceTree = "<group>"; };
 		64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerTableViewCell.swift; sourceTree = "<group>"; };
+		64EB5D8127FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsPlannerTableViewCell.swift; sourceTree = "<group>"; };
 		A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 			children = (
 				641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */,
 				64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */,
+				64EB5D8127FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
 				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
 				64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */,
+				64EB5D8227FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift in Sources */,
 				64EB5D8027FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift in Sources */,
 				64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */,
 				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,

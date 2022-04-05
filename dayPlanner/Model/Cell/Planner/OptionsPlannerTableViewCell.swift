@@ -24,6 +24,23 @@ class OptionsPlannerTableViewCell: UITableViewCell {
         return label
     }()
     
+    let repeatSwitcher: UISwitch = {
+        let repeatSwitch = UISwitch()
+        repeatSwitch.isOn = true
+        repeatSwitch.isHidden = true
+        repeatSwitch.onTintColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
+        return repeatSwitch
+    }()
+    
+    let cellNameArray = [["Date", "Time"],
+                         ["Name", "Priority"],
+                         ["User name"],
+                         ["", ""],
+                         ["Repeat every 7 days"],
+    
+    ]
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier:  reuseIdentifier)
         
@@ -33,10 +50,27 @@ class OptionsPlannerTableViewCell: UITableViewCell {
 
         self.selectionStyle = .none
         self.backgroundColor = .clear
+        
+        repeatSwitcher.addTarget(self, action: #selector(handleChangeSwitcher(paramTarget:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUpCell(indexPath: IndexPath) {
+        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+        
+        if indexPath == [3,0] {
+            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        }
+        if indexPath == [4,0] {
+            repeatSwitcher.isHidden = false
+        }
+    }
+    
+    @objc func handleChangeSwitcher(paramTarget: UISwitch) {
+        
     }
     
     func setConstraints() {
@@ -50,10 +84,16 @@ class OptionsPlannerTableViewCell: UITableViewCell {
         ])
         
         self.addSubview(nameCellLabel)
-        
         NSLayoutConstraint.activate([
             nameCellLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             nameCellLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+         
+        ])
+        
+        self.contentView.addSubview(repeatSwitcher)
+        NSLayoutConstraint.activate([
+            repeatSwitcher.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            repeatSwitcher.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -20),
          
         ])
     }
