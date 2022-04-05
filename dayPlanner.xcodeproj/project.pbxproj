@@ -20,7 +20,8 @@
 		64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7027FB3BA000B69D7C /* UIFont.swift */; };
 		64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */; };
 		64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */; };
-		64EB5D7827FC878800B69D7C /* OptionsPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7727FC878800B69D7C /* OptionsPlannerViewController.swift */; };
+		64EB5D7827FC878800B69D7C /* OptionsPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7727FC878800B69D7C /* OptionsPlannerTableViewController.swift */; };
+		64EB5D8027FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */; };
 		F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +43,8 @@
 		64EB5D7027FB3BA000B69D7C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
-		64EB5D7727FC878800B69D7C /* OptionsPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerViewController.swift; sourceTree = "<group>"; };
+		64EB5D7727FC878800B69D7C /* OptionsPlannerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerTableViewController.swift; sourceTree = "<group>"; };
+		64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerTableViewCell.swift; sourceTree = "<group>"; };
 		A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,8 +88,9 @@
 		641A3B7C27FA2A4400D42054 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */,
-				64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */,
+				64EB5D7E27FCAACE00B69D7C /* Contacts */,
+				64EB5D7D27FCAAAF00B69D7C /* Tasks */,
+				64EB5D7C27FCAAA500B69D7C /* Planner */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -182,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				64596B3C27F7567900679965 /* PlannerViewController.swift */,
-				64EB5D7727FC878800B69D7C /* OptionsPlannerViewController.swift */,
+				64EB5D7727FC878800B69D7C /* OptionsPlannerTableViewController.swift */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -199,6 +202,30 @@
 			isa = PBXGroup;
 			children = (
 				64596B4027F7569F00679965 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		64EB5D7C27FCAAA500B69D7C /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+				641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */,
+				64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */,
+			);
+			path = Planner;
+			sourceTree = "<group>";
+		};
+		64EB5D7D27FCAAAF00B69D7C /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		64EB5D7E27FCAACE00B69D7C /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -321,10 +348,11 @@
 				64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */,
 				641A3B8327FAEF0A00D42054 /* UIStackView.swift in Sources */,
 				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
-				64EB5D7827FC878800B69D7C /* OptionsPlannerViewController.swift in Sources */,
+				64EB5D7827FC878800B69D7C /* OptionsPlannerTableViewController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
 				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
 				64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */,
+				64EB5D8027FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift in Sources */,
 				64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */,
 				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,
 				64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */,

@@ -62,7 +62,7 @@ class PlannerViewController: UIViewController {
     }
     
     @objc func handlePressAddButton() {
-        let plannerOption = OptionsPlannerViewController()
+        let plannerOption = OptionsPlannerTableViewController()
         navigationController?.pushViewController(plannerOption, animated: true)
     }
     
