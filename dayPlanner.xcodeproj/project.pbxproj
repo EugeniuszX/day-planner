@@ -20,6 +20,7 @@
 		64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7027FB3BA000B69D7C /* UIFont.swift */; };
 		64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */; };
 		64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */; };
+		64EB5D7827FC878800B69D7C /* OptionsPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7727FC878800B69D7C /* OptionsPlannerViewController.swift */; };
 		F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		64EB5D7027FB3BA000B69D7C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
+		64EB5D7727FC878800B69D7C /* OptionsPlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerViewController.swift; sourceTree = "<group>"; };
 		A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,9 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				642FFC2127F72FE600BF5A89 /* MainTabBarController.swift */,
-				64596B3C27F7567900679965 /* PlannerViewController.swift */,
-				64596B3E27F7568B00679965 /* TasksViewController.swift */,
-				64596B4027F7569F00679965 /* ContactsViewController.swift */,
+				64EB5D7B27FC88C100B69D7C /* Contacts */,
+				64EB5D7A27FC88B000B69D7C /* Tasks */,
+				64EB5D7927FC883500B69D7C /* Planner */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +176,31 @@
 				64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		64EB5D7927FC883500B69D7C /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+				64596B3C27F7567900679965 /* PlannerViewController.swift */,
+				64EB5D7727FC878800B69D7C /* OptionsPlannerViewController.swift */,
+			);
+			path = Planner;
+			sourceTree = "<group>";
+		};
+		64EB5D7A27FC88B000B69D7C /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				64596B3E27F7568B00679965 /* TasksViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		64EB5D7B27FC88C100B69D7C /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				64596B4027F7569F00679965 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +321,7 @@
 				64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */,
 				641A3B8327FAEF0A00D42054 /* UIStackView.swift in Sources */,
 				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
+				64EB5D7827FC878800B69D7C /* OptionsPlannerViewController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
 				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
 				64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */,

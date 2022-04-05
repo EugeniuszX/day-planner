@@ -57,6 +57,13 @@ class PlannerViewController: UIViewController {
         swipeActions()
         
         toggleVisibleButton.addTarget(self, action: #selector(handleToggleVisibleCalendar), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
+    }
+    
+    @objc func handlePressAddButton() {
+        let plannerOption = OptionsPlannerViewController()
+        navigationController?.pushViewController(plannerOption, animated: true)
     }
     
     @objc func handleToggleVisibleCalendar() {
