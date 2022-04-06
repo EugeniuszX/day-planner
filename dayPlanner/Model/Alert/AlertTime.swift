@@ -14,6 +14,7 @@ extension UIViewController {
         
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .time
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.preferredDatePickerStyle = .wheels
         
         alert.view.addSubview(datePicker)
@@ -36,7 +37,7 @@ extension UIViewController {
         alert.addAction(actionCancel)
         
         alert.view.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
+       
         datePicker.widthAnchor.constraint(equalTo: alert.view.widthAnchor).isActive = true
         datePicker.heightAnchor.constraint(equalToConstant: 160).isActive = true
         datePicker.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 20).isActive = true

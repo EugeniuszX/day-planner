@@ -20,6 +20,7 @@ class OptionsPlannerTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
+        tableView.bounces = false
         tableView.register(OptionsPlannerTableViewCell.self, forCellReuseIdentifier: "idOptionsPlannerCell")
         tableView.register(HeaderOptionsPlannerTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsPlannerHeader)
     
@@ -62,7 +63,7 @@ class OptionsPlannerTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! OptionsPlannerTableViewCell
-        
+        navigationController?.navigationBar.topItem?.title = "Options"
         switch indexPath {
         case [0, 0]:
             alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
@@ -77,13 +78,15 @@ class OptionsPlannerTableViewController: UITableViewController {
         case [1, 1]:
             alertcellName(label: cell.nameCellLabel, name: "Priority", placeholder: "Medium, low...")
         case [2, 0]:
-            let user = UsersViewController()
-            navigationController?.pushViewController(user, animated: true)
+            handleNavigate(viewController: UsersViewController())
         case [3, 0]:
-            let colorViewController = PlannerColorViewController()
-            navigationController?.pushViewController(colorViewController, animated: true)
+            handleNavigate(viewController: PlannerColorViewController())
         default:
             print("SOmethings")
         }
+    }
+    func handleNavigate(viewController: UIViewController) {
+        navigationController?.navigationBar.topItem?.title = "Options"
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
