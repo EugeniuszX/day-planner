@@ -68,7 +68,20 @@ class OptionsPlannerTableViewController: UITableViewController {
             alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
                 print(numberWeekday, date)
             }
-            print("Cell")
+        case [0, 1]:
+            alertTime(label: cell.nameCellLabel) { (date) in
+                print("date =>", date)
+            }
+        case [1, 0]:
+            alertcellName(label: cell.nameCellLabel, name: "Task name", placeholder: "Type some name")
+        case [1, 1]:
+            alertcellName(label: cell.nameCellLabel, name: "Priority", placeholder: "Medium, low...")
+        case [2, 0]:
+            let user = UsersViewController()
+            navigationController?.pushViewController(user, animated: true)
+        case [3, 0]:
+            let colorViewController = PlannerColorViewController()
+            navigationController?.pushViewController(colorViewController, animated: true)
         default:
             print("SOmethings")
         }
