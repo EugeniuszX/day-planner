@@ -59,4 +59,18 @@ class OptionsPlannerTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsPlannerTableViewCell
+        
+        switch indexPath {
+        case [0, 0]:
+            alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+                print(numberWeekday, date)
+            }
+            print("Cell")
+        default:
+            print("SOmethings")
+        }
+    }
 }

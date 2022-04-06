@@ -70,7 +70,7 @@ class OptionsPlannerTableViewCell: UITableViewCell {
     }
     
     @objc func handleChangeSwitcher(paramTarget: UISwitch) {
-        
+ 
     }
     
     func setConstraints() {
@@ -90,10 +90,10 @@ class OptionsPlannerTableViewCell: UITableViewCell {
          
         ])
         
-        self.contentView.addSubview(repeatSwitcher)
+        self.addSubview(repeatSwitcher)
         NSLayoutConstraint.activate([
             repeatSwitcher.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            repeatSwitcher.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -20),
+            repeatSwitcher.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -16),
          
         ])
     }
