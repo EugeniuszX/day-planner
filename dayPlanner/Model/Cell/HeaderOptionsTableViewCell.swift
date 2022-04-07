@@ -8,11 +8,9 @@
 import Foundation
 import UIKit
 
-class HeaderOptionsPlannerTableViewCell: UITableViewHeaderFooterView {
+class HeaderOptionsTableViewCell: UITableViewHeaderFooterView {
     
     let headerLabel = UILabel(text: "HEADER", font: .avenirNext14())
-    
-    let headerNameArray = ["Date and Time", "Task", "Username", "Color", "Period"]
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier:  reuseIdentifier)
@@ -29,8 +27,8 @@ class HeaderOptionsPlannerTableViewCell: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpHeader(section: Int) {
-        headerLabel.text = headerNameArray[section]
+    func setUpHeader(arrayOfNames: [String], section: Int) {
+        headerLabel.text = arrayOfNames[section]
     }
     
     func setConstraints() {

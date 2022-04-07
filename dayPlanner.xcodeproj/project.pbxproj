@@ -21,13 +21,14 @@
 		646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A327FDFF9900B9F937 /* AlertCellName.swift */; };
 		646CA6A627FE031F00B9F937 /* PlannerColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A527FE031F00B9F937 /* PlannerColorViewController.swift */; };
 		646CA6A827FE034400B9F937 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A727FE034400B9F937 /* UsersViewController.swift */; };
+		646CA6AC27FEEE0800B9F937 /* ColorPlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6AB27FEEE0800B9F937 /* ColorPlannerTableViewCell.swift */; };
 		64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D6E27FB0EF200B69D7C /* UILabel.swift */; };
 		64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7027FB3BA000B69D7C /* UIFont.swift */; };
 		64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */; };
 		64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */; };
 		64EB5D7827FC878800B69D7C /* OptionsPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7727FC878800B69D7C /* OptionsPlannerTableViewController.swift */; };
 		64EB5D8027FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */; };
-		64EB5D8227FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D8127FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift */; };
+		64EB5D8227FCB5DE00B69D7C /* HeaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D8127FCB5DE00B69D7C /* HeaderOptionsTableViewCell.swift */; };
 		F23CFA53F33B50EEAB3D86AF /* Pods_dayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,13 +51,14 @@
 		646CA6A327FDFF9900B9F937 /* AlertCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCellName.swift; sourceTree = "<group>"; };
 		646CA6A527FE031F00B9F937 /* PlannerColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerColorViewController.swift; sourceTree = "<group>"; };
 		646CA6A727FE034400B9F937 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		646CA6AB27FEEE0800B9F937 /* ColorPlannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPlannerTableViewCell.swift; sourceTree = "<group>"; };
 		64EB5D6E27FB0EF200B69D7C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		64EB5D7027FB3BA000B69D7C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		64EB5D7527FB774500B69D7C /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		64EB5D7727FC878800B69D7C /* OptionsPlannerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerTableViewController.swift; sourceTree = "<group>"; };
 		64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPlannerTableViewCell.swift; sourceTree = "<group>"; };
-		64EB5D8127FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsPlannerTableViewCell.swift; sourceTree = "<group>"; };
+		64EB5D8127FCB5DE00B69D7C /* HeaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		A1A1D6CDE327A2F1D896EB11 /* Pods_dayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		641A3B7B27FA2A3800D42054 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				646CA6AD27FF3C4500B9F937 /* ColorPicker */,
 				646CA69E27FDF4F800B9F937 /* Alert */,
 				641A3B7C27FA2A4400D42054 /* Cell */,
 			);
@@ -101,6 +104,7 @@
 		641A3B7C27FA2A4400D42054 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				64EB5D8127FCB5DE00B69D7C /* HeaderOptionsTableViewCell.swift */,
 				64EB5D7E27FCAACE00B69D7C /* Contacts */,
 				64EB5D7D27FCAAAF00B69D7C /* Tasks */,
 				64EB5D7C27FCAAA500B69D7C /* Planner */,
@@ -196,6 +200,13 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		646CA6AD27FF3C4500B9F937 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
 		64EB5D7427FB770200B69D7C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +247,7 @@
 			children = (
 				641A3B7E27FA2A8000D42054 /* PlannerTableViewCell.swift */,
 				64EB5D7F27FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift */,
-				64EB5D8127FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift */,
+				646CA6AB27FEEE0800B9F937 /* ColorPlannerTableViewCell.swift */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -378,10 +389,11 @@
 				646CA6A027FDF50800B9F937 /* AlertDate.swift in Sources */,
 				646CA6A627FE031F00B9F937 /* PlannerColorViewController.swift in Sources */,
 				64EB5D7827FC878800B69D7C /* OptionsPlannerTableViewController.swift in Sources */,
+				646CA6AC27FEEE0800B9F937 /* ColorPlannerTableViewCell.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
 				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
 				64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */,
-				64EB5D8227FCB5DE00B69D7C /* HeaderOptionsPlannerTableViewCell.swift in Sources */,
+				64EB5D8227FCB5DE00B69D7C /* HeaderOptionsTableViewCell.swift in Sources */,
 				64EB5D8027FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift in Sources */,
 				64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */,
 				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,

@@ -9,20 +9,28 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class OptionsPlannerTableViewController: UITableViewController {
+class OptionsPlannerTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
     
     let idOptionsPlannerCell = "idOptionsPlannerCell"
     let idOptionsPlannerHeader = "idOptionsPlannerHeader"
-
+    let headerNameArray = ["Date and Time", "Task", "Username", "Color", "Period"]
+    
+    
+    let colorPickerViewController: UIColorPickerViewController = {
+        let colorPicker = UIColorPickerViewController()
+        
+        return colorPicker
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        colorPickerViewController.delegate = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         tableView.bounces = false
         tableView.register(OptionsPlannerTableViewCell.self, forCellReuseIdentifier: "idOptionsPlannerCell")
-        tableView.register(HeaderOptionsPlannerTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsPlannerHeader)
+        tableView.register(HeaderOptionsTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsPlannerHeader)
     
         tableView.separatorStyle = .none
         title = "Option Planner"
@@ -52,9 +60,9 @@ class OptionsPlannerTableViewController: UITableViewController {
         return 44
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsPlannerHeader) as! HeaderOptionsPlannerTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsPlannerHeader) as! HeaderOptionsTableViewCell
         
-        header.setUpHeader(section: section)
+        header.setUpHeader(arrayOfNames: headerNameArray, section: section)
         return header
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -80,11 +88,17 @@ class OptionsPlannerTableViewController: UITableViewController {
         case [2, 0]:
             handleNavigate(viewController: UsersViewController())
         case [3, 0]:
-            handleNavigate(viewController: PlannerColorViewController())
+            present(colorPickerViewController, animated: true)
         default:
             print("SOmethings")
         }
     }
+    
+    func handleSelectColor(_ viewController: UIColorPickerViewController) {
+        let selectedColor = viewController.selectedColor
+        
+    }
+    
     func handleNavigate(viewController: UIViewController) {
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(viewController, animated: true)

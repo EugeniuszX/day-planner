@@ -7,12 +7,14 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
-class PlannerColorViewController: UIViewController {
+class PlannerColorViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         title = "Color"
-        view.backgroundColor = .white
+        
+       
     }
 }
