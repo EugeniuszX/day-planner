@@ -20,6 +20,8 @@
 		646CA6A227FDFE1100B9F937 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A127FDFE1100B9F937 /* AlertTime.swift */; };
 		646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A327FDFF9900B9F937 /* AlertCellName.swift */; };
 		646CA6A827FE034400B9F937 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A727FE034400B9F937 /* UsersViewController.swift */; };
+		646CA6B127FF474400B9F937 /* TaskOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6B027FF474400B9F937 /* TaskOptionTableView.swift */; };
+		646CA6B327FF4DC800B9F937 /* OptionsTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6B227FF4DC800B9F937 /* OptionsTaskTableViewCell.swift */; };
 		64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D6E27FB0EF200B69D7C /* UILabel.swift */; };
 		64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7027FB3BA000B69D7C /* UIFont.swift */; };
 		64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */; };
@@ -48,6 +50,8 @@
 		646CA6A127FDFE1100B9F937 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
 		646CA6A327FDFF9900B9F937 /* AlertCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCellName.swift; sourceTree = "<group>"; };
 		646CA6A727FE034400B9F937 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		646CA6B027FF474400B9F937 /* TaskOptionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionTableView.swift; sourceTree = "<group>"; };
+		646CA6B227FF4DC800B9F937 /* OptionsTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTaskTableViewCell.swift; sourceTree = "<group>"; };
 		64EB5D6E27FB0EF200B69D7C /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		64EB5D7027FB3BA000B69D7C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		64EB5D7A27FC88B000B69D7C /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				646CA6B027FF474400B9F937 /* TaskOptionTableView.swift */,
 				64596B3E27F7568B00679965 /* TasksViewController.swift */,
 			);
 			path = Tasks;
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				64EB5D7227FB4A6400B69D7C /* TasksTableViewCell.swift */,
+				646CA6B227FF4DC800B9F937 /* OptionsTaskTableViewCell.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				646CA6A227FDFE1100B9F937 /* AlertTime.swift in Sources */,
 				64596B3F27F7568B00679965 /* TasksViewController.swift in Sources */,
 				641A3B8327FAEF0A00D42054 /* UIStackView.swift in Sources */,
+				646CA6B127FF474400B9F937 /* TaskOptionTableView.swift in Sources */,
 				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
 				646CA6A027FDF50800B9F937 /* AlertDate.swift in Sources */,
 				64EB5D7827FC878800B69D7C /* OptionsPlannerTableViewController.swift in Sources */,
@@ -381,6 +388,7 @@
 				64EB5D8027FCAB0D00B69D7C /* OptionsPlannerTableViewCell.swift in Sources */,
 				64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */,
 				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,
+				646CA6B327FF4DC800B9F937 /* OptionsTaskTableViewCell.swift in Sources */,
 				64596B4127F7569F00679965 /* ContactsViewController.swift in Sources */,
 				64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */,
 				646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func alertcellName(label: UILabel, name: String, placeholder: String) {
+    func alertCellName(label: UILabel, name: String, placeholder: String) {
         let alert = UIAlertController(title: name, message: nil, preferredStyle: .alert)
         
         let actionOK = UIAlertAction(title: "OK", style: .default) { (action) in

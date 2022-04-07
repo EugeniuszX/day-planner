@@ -57,6 +57,13 @@ class TasksViewController: UIViewController {
         swipeActions()
         
         toggleVisibleButton.addTarget(self, action: #selector(handleToggleVisibleCalendar), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
+    }
+    
+    @objc func handlePressAddButton() {
+        let tasksOption = TaskOptionTableView()
+        navigationController?.pushViewController(tasksOption, animated: true)
     }
     
     @objc func handleToggleVisibleCalendar() {
