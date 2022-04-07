@@ -10,25 +10,19 @@ import UIKit
 import SwiftUI
 
 class OptionsPlannerTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
-    
+    var colorCell: OptionsPlannerTableViewCell?
     let idOptionsPlannerCell = "idOptionsPlannerCell"
     let idOptionsPlannerHeader = "idOptionsPlannerHeader"
     let headerNameArray = ["Date and Time", "Task", "Username", "Color", "Period"]
     
-    
-    let colorPickerViewController: UIColorPickerViewController = {
-        let colorPicker = UIColorPickerViewController()
-        
-        return colorPicker
-    }()
-    
+    let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        colorPickerViewController.delegate = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         tableView.bounces = false
+        colorPicker.delegate = self
         tableView.register(OptionsPlannerTableViewCell.self, forCellReuseIdentifier: "idOptionsPlannerCell")
         tableView.register(HeaderOptionsTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsPlannerHeader)
     
@@ -79,7 +73,7 @@ class OptionsPlannerTableViewController: UITableViewController, UIColorPickerVie
             }
         case [0, 1]:
             alertTime(label: cell.nameCellLabel) { (date) in
-                print("date =>", date)
+
             }
         case [1, 0]:
             alertcellName(label: cell.nameCellLabel, name: "Task name", placeholder: "Type some name")
@@ -88,16 +82,22 @@ class OptionsPlannerTableViewController: UITableViewController, UIColorPickerVie
         case [2, 0]:
             handleNavigate(viewController: UsersViewController())
         case [3, 0]:
-            present(colorPickerViewController, animated: true)
+            colorCell = cell
+           present(colorPicker, animated: true)
         default:
-            print("SOmethings")
+            print("")
         }
     }
     
-    func handleSelectColor(_ viewController: UIColorPickerViewController) {
-        let selectedColor = viewController.selectedColor
-        
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        let color = viewController.selectedColor
+        colorCell?.backgroundViewCell.backgroundColor = color
     }
+    func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
+        let color = viewController.selectedColor
+        colorCell?.backgroundViewCell.backgroundColor = color
+    }
+ 
     
     func handleNavigate(viewController: UIViewController) {
         navigationController?.navigationBar.topItem?.title = "Options"
