@@ -10,10 +10,17 @@ import UIKit
 
 
 class OptionsPlannerTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
-    private var colorCell: OptionsPlannerTableViewCell?
+    private var colorCell: OptionsTableViewCell?
     let idOptionsPlannerCell = "idOptionsPlannerCell"
     let idOptionsPlannerHeader = "idOptionsPlannerHeader"
     let headerNameArray = ["Date and Time", "Task", "Username", "Color", "Period"]
+    
+    let cellNameArray = [["Date", "Time"],
+                         ["Name", "Priority"],
+                         ["User name"],
+                         ["", ""],
+                         ["Repeat every 7 days"],
+    ]
     
     let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
@@ -23,7 +30,7 @@ class OptionsPlannerTableViewController: UITableViewController, UIColorPickerVie
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         tableView.bounces = false
         colorPicker.delegate = self
-        tableView.register(OptionsPlannerTableViewCell.self, forCellReuseIdentifier: "idOptionsPlannerCell")
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: "idOptionsPlannerCell")
         tableView.register(HeaderOptionsTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsPlannerHeader)
     
         tableView.separatorStyle = .none
@@ -46,8 +53,8 @@ class OptionsPlannerTableViewController: UITableViewController, UIColorPickerVie
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsPlannerCell, for: indexPath) as! OptionsPlannerTableViewCell
-        cell.setUpCell(indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsPlannerCell, for: indexPath) as! OptionsTableViewCell
+        cell.setUpCellPlanner(arrayOfNames: cellNameArray, indexPath: indexPath)
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -64,7 +71,7 @@ class OptionsPlannerTableViewController: UITableViewController, UIColorPickerVie
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsPlannerTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         navigationController?.navigationBar.topItem?.title = "Options"
         switch indexPath {
         case [0, 0]:

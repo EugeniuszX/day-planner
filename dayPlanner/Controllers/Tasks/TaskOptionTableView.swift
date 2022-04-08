@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 class TaskOptionTableView: UITableViewController, UIColorPickerViewControllerDelegate {
-    private var colorCell: OptionsTaskTableViewCell?
+    private var colorCell: OptionsTableViewCell?
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
     let headerNameArray = ["Date and Time", "Name", "Task", "Color"]
-    
+    let cellNameArray = ["Date", "Task", "Name", ""]
     let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class TaskOptionTableView: UITableViewController, UIColorPickerViewControllerDel
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         tableView.bounces = false
         colorPicker.delegate = self
-        tableView.register(OptionsTaskTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
         tableView.register(HeaderOptionsTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsTasksHeader)
     
         tableView.separatorStyle = .none
@@ -38,8 +38,8 @@ class TaskOptionTableView: UITableViewController, UIColorPickerViewControllerDel
       return 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionsTaskTableViewCell
-        cell.setUpCell(indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionsTableViewCell
+        cell.setUpCellTasks(nameArray: cellNameArray,indexPath: indexPath)
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,7 +56,7 @@ class TaskOptionTableView: UITableViewController, UIColorPickerViewControllerDel
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsTaskTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         navigationController?.navigationBar.topItem?.title = "Options"
         switch indexPath.section {
         case 0:

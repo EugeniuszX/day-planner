@@ -27,7 +27,7 @@ class OptionsTaskTableViewCell: UITableViewCell {
     }()
     
   
-    let cellNameArray = ["Date", "Task", "Name", ""]
+ 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier:  reuseIdentifier)
@@ -44,13 +44,7 @@ class OptionsTaskTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpCell(indexPath: IndexPath) {
-        nameCellLabel.text = cellNameArray[indexPath.section]
-        
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
-        }
-    }
+
     func setConstraints() {
         self.addSubview(backgroundViewCell)
         

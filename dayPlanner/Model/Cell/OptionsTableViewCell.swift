@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OptionsPlannerTableViewCell: UITableViewCell {
+class OptionsTableViewCell: UITableViewCell {
 
     let backgroundViewCell: UIView = {
         let view = UIView()
@@ -33,14 +33,6 @@ class OptionsPlannerTableViewCell: UITableViewCell {
         return repeatSwitch
     }()
     
-    let cellNameArray = [["Date", "Time"],
-                         ["Name", "Priority"],
-                         ["User name"],
-                         ["", ""],
-                         ["Repeat every 7 days"],
-    
-    ]
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier:  reuseIdentifier)
         
@@ -58,14 +50,22 @@ class OptionsPlannerTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpCell(indexPath: IndexPath) {
-        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+    func setUpCellPlanner(arrayOfNames: [[String]], indexPath: IndexPath) {
+        nameCellLabel.text = arrayOfNames[indexPath.section][indexPath.row]
         
         if indexPath == [3,0] {
             backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         }
         if indexPath == [4,0] {
             repeatSwitcher.isHidden = false
+        }
+    }
+    
+    func setUpCellTasks(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+        
+        if indexPath == [3,0] {
+            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         }
     }
     
