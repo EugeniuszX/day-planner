@@ -45,7 +45,11 @@ class ContactOptionTableViewController: UITableViewController, UIColorPickerView
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        if indexPath.section == 4 {
+            return 200
+        } else {
+            return 44
+        }
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsContactHeader) as! HeaderOptionsTableViewCell
@@ -59,6 +63,17 @@ class ContactOptionTableViewController: UITableViewController, UIColorPickerView
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
+        
+        switch indexPath.section {
+        case 0:
+            alertCellName(label: cell.nameCellLabel, name: "User name", placeholder: "Steve Jobs")
+        case 1:
+            alertCellName(label: cell.nameCellLabel, name: "User phone", placeholder: "Enter phone")
+        case 2:
+            alertCellName(label: cell.nameCellLabel, name: "User mail", placeholder: "Enter mail")
+        default:
+            return
+        }
     }
     
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {

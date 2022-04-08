@@ -9,12 +9,13 @@ import UIKit
 
 class OptionsTableViewCell: UITableViewCell {
 
-    let backgroundViewCell: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    let backgroundViewCell: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .white
+        imageView.layer.cornerRadius = 10
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     let nameCellLabel: UILabel = {
@@ -69,8 +70,13 @@ class OptionsTableViewCell: UITableViewCell {
         }
     }
     
+    
     func setUpCellContact(nameArray: [String], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section]
+        
+        if indexPath.section == 4 {
+            backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus")
+        }
     }
     
     @objc func handleChangeSwitcher(paramTarget: UISwitch) {
@@ -98,7 +104,6 @@ class OptionsTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             repeatSwitcher.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             repeatSwitcher.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -16),
-         
         ])
     }
     
