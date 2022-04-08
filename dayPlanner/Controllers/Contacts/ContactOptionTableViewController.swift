@@ -71,6 +71,9 @@ class ContactOptionTableViewController: UITableViewController, UIColorPickerView
             alertCellName(label: cell.nameCellLabel, name: "User phone", placeholder: "Enter phone")
         case 2:
             alertCellName(label: cell.nameCellLabel, name: "User mail", placeholder: "Enter mail")
+        case 3:
+            alertOfUsers(label: cell.nameCellLabel) { (type) in
+            }
         default:
             return
         }
