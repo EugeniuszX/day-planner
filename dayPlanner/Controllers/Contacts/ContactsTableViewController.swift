@@ -17,21 +17,25 @@ class ContactsTableViewController: UITableViewController, UIColorPickerViewContr
         tableView.dataSource = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         tableView.bounces = false
-        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
+        tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
     
         tableView.separatorStyle = .singleLine
         title = "Contacts"
         
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
+    }
+    @objc func handlePressAddButton() {
+        let contactsOption = ContactOptionTableViewController()
+        navigationController?.pushViewController(contactsOption, animated: true) 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return 5
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! OptionsTableViewCell
-        cell.textLabel?.text = "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

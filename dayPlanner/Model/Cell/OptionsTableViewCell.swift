@@ -69,6 +69,10 @@ class OptionsTableViewCell: UITableViewCell {
         }
     }
     
+    func setUpCellContact(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+    }
+    
     @objc func handleChangeSwitcher(paramTarget: UISwitch) {
  
     }
