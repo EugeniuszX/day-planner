@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ContactOptionTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
+class ContactOptionsTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
     let idOptionsContactCell = "idOptionsContactCell"
     let idOptionsContactHeader = "idOptionsContactHeader"
@@ -100,7 +100,7 @@ class ContactOptionTableViewController: UITableViewController, UIColorPickerView
     }
 }
 
-extension ContactOptionTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ContactOptionsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         
         if UIImagePickerController.isSourceTypeAvailable(source) {

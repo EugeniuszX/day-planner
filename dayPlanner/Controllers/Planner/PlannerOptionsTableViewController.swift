@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class OptionsPlannerTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
+class PlannerOptionsTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
     let idOptionsPlannerCell = "idOptionsPlannerCell"
     let idOptionsPlannerHeader = "idOptionsPlannerHeader"

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TaskOptionTableView: UITableViewController, UIColorPickerViewControllerDelegate {
+class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"

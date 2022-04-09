@@ -32,7 +32,7 @@ class ContactsTableViewController: UITableViewController, UIColorPickerViewContr
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
     }
     @objc func handlePressAddButton() {
-        let contactsOption = ContactOptionTableViewController()
+        let contactsOption = ContactOptionsTableViewController()
         navigationController?.pushViewController(contactsOption, animated: true) 
     }
 
