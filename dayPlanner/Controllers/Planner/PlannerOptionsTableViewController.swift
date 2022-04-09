@@ -11,8 +11,8 @@ import UIKit
 
 class PlannerOptionsTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
-    let idOptionsPlannerCell = "idOptionsPlannerCell"
-    let idOptionsPlannerHeader = "idOptionsPlannerHeader"
+    private let idOptionsPlannerCell = "idOptionsPlannerCell"
+    private let idOptionsPlannerHeader = "idOptionsPlannerHeader"
     let headerNameArray = ["Date and Time", "Task", "Username", "Color", "Period"]
     
     let cellNameArray = [["Date", "Time"],
@@ -34,7 +34,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
         tableView.register(HeaderOptionsTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsPlannerHeader)
     
         tableView.separatorStyle = .none
-        title = "Option Planner"
+        title = "Options Planner"
         
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
        

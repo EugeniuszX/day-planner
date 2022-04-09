@@ -12,14 +12,14 @@ import FSCalendar
 
 
 class PlannerViewController: UIViewController {
-    var calendarHeightConstraint: NSLayoutConstraint!
+    private var calendarHeightConstraint: NSLayoutConstraint!
     private var calendar: FSCalendar = {
         let calendar = FSCalendar()
         calendar.translatesAutoresizingMaskIntoConstraints = false
         return calendar
     }()
     
-    let toggleVisibleButton: UIButton = {
+    private let toggleVisibleButton: UIButton = {
      let button = UIButton()
         button.setTitle("Open calendar", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.2365458608, green: 0.2365458608, blue: 0.2365458608, alpha: 1), for: .normal)
@@ -28,14 +28,14 @@ class PlannerViewController: UIViewController {
         return button
     }()
     
-    let tableView: UITableView = {
+   private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.bounces = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    let idPlannerCell = "idPlannerCell"
+    private let idPlannerCell = "idPlannerCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +65,12 @@ class PlannerViewController: UIViewController {
         }
     }
     
-    @objc func handlePressAddButton() {
+    @objc private func handlePressAddButton() {
         let plannerOption = PlannerOptionsTableViewController()
         navigationController?.pushViewController(plannerOption, animated: true)
     }
     
-    @objc func handleToggleVisibleCalendar() {
+    @objc private func handleToggleVisibleCalendar() {
         if calendar.scope == .week {
             calendar.setScope(.month, animated: true)
             toggleVisibleButton.setTitle("Close calendar", for: .normal)
@@ -82,7 +82,7 @@ class PlannerViewController: UIViewController {
     
     // MARK: SwipeGestureRecognizer
     
-    func swipeActions() {
+    private func swipeActions() {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeUp.direction = .up
         calendar.addGestureRecognizer(swipeUp)
@@ -91,7 +91,7 @@ class PlannerViewController: UIViewController {
         swipeDown.direction = .down
         calendar.addGestureRecognizer(swipeDown)
     }
-    @objc func handleSwipe() {
+    @objc private func handleSwipe() {
         handleToggleVisibleCalendar()
     }
 }
