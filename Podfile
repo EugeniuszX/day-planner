@@ -5,6 +5,7 @@ target 'dayPlanner' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'FSCalendar'
+  pod 'RealmSwift', '~>10'
   # Pods for dayPlanner
 
 end
