@@ -74,6 +74,11 @@ class ContactOptionTableViewController: UITableViewController, UIColorPickerView
         case 3:
             alertOfUsers(label: cell.nameCellLabel) { (type) in
             }
+        case 4:
+            alertPhotoCamera { source in
+                self.chooseImagePicker(source: source)
+                
+            }
         default:
             return
         }
@@ -111,6 +116,8 @@ extension ContactOptionTableViewController: UIImagePickerControllerDelegate, UIN
         let cell = tableView.cellForRow(at: [4, 0]) as! OptionsTableViewCell
         
         cell.backgroundViewCell.image = info[.editedImage] as? UIImage
+        cell.backgroundViewCell.contentMode = .scaleAspectFill
+        cell.backgroundViewCell.clipsToBounds = true
         dismiss(animated: true)
     }
 }
