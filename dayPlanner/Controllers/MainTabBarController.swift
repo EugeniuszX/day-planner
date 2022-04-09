@@ -12,10 +12,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTabBar()
-
-        self.tabBar.backgroundColor = .white
-       
+        setupTabBar()       
     }
     
     func setupTabBar() {
@@ -32,6 +29,7 @@ class MainTabBarController: UITabBarController {
         item.titlePositionAdjustment = .init(horizontal: 0, vertical: 5)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem = item
+        navigationController.navigationBar.scrollEdgeAppearance = navigationController.navigationBar.standardAppearance
         
         return navigationController
     }

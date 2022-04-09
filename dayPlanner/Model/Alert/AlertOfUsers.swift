@@ -24,7 +24,6 @@ extension UIViewController {
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
-   
         
         alertController.addAction(userFriendAction)
         alertController.addAction(userStrangerAction)

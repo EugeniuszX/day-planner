@@ -22,7 +22,6 @@ class ContactsTableViewController: UITableViewController, UIColorPickerViewContr
         tableView.separatorStyle = .singleLine
         title = "Contacts"
         
-        tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
     }
