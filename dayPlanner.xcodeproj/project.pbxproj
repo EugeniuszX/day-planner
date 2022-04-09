@@ -20,6 +20,9 @@
 		646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A327FDFF9900B9F937 /* AlertCellName.swift */; };
 		646CA6A827FE034400B9F937 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A727FE034400B9F937 /* UsersViewController.swift */; };
 		646CA6B127FF474400B9F937 /* TaskOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6B027FF474400B9F937 /* TaskOptionsTableView.swift */; };
+		648B0D6E2801E8AA003566DD /* PlannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D6D2801E8AA003566DD /* PlannerModel.swift */; };
+		648B0D712801FB1A003566DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D702801FB1A003566DD /* RealmManager.swift */; };
+		648B0D7328020479003566DD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D7228020479003566DD /* UIColor.swift */; };
 		64D94CB22800869800BA14C2 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB12800869800BA14C2 /* ContactsTableViewController.swift */; };
 		64D94CB4280091AA00BA14C2 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB3280091AA00BA14C2 /* ContactsTableViewCell.swift */; };
 		64D94CB62800A63400BA14C2 /* ContactOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB52800A63400BA14C2 /* ContactOptionsTableViewController.swift */; };
@@ -53,6 +56,9 @@
 		646CA6A327FDFF9900B9F937 /* AlertCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCellName.swift; sourceTree = "<group>"; };
 		646CA6A727FE034400B9F937 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		646CA6B027FF474400B9F937 /* TaskOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableView.swift; sourceTree = "<group>"; };
+		648B0D6D2801E8AA003566DD /* PlannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerModel.swift; sourceTree = "<group>"; };
+		648B0D702801FB1A003566DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		648B0D7228020479003566DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		64D94CB12800869800BA14C2 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		64D94CB3280091AA00BA14C2 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		64D94CB52800A63400BA14C2 /* ContactOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionsTableViewController.swift; sourceTree = "<group>"; };
@@ -97,13 +103,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		641A3B7B27FA2A3800D42054 /* Model */ = {
+		641A3B7B27FA2A3800D42054 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				648B0D6C2801E89F003566DD /* Realm */,
 				646CA69E27FDF4F800B9F937 /* Alert */,
 				641A3B7C27FA2A4400D42054 /* Cell */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		641A3B7C27FA2A4400D42054 /* Cell */ = {
@@ -132,6 +139,7 @@
 				641A3B8227FAEF0A00D42054 /* UIStackView.swift */,
 				64EB5D6E27FB0EF200B69D7C /* UILabel.swift */,
 				64EB5D7027FB3BA000B69D7C /* UIFont.swift */,
+				648B0D7228020479003566DD /* UIColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -159,7 +167,8 @@
 			children = (
 				64596B3927F7543000679965 /* Application */,
 				64596B3B27F7544000679965 /* Controllers */,
-				641A3B7B27FA2A3800D42054 /* Model */,
+				641A3B7B27FA2A3800D42054 /* Models */,
+				648B0D6F2801FAEA003566DD /* Services */,
 				641A3B8027FAEE9000D42054 /* Extensions */,
 				64EB5D7427FB770200B69D7C /* Protocols */,
 				64596B3A27F7543A00679965 /* Resources */,
@@ -206,6 +215,22 @@
 				64D94CB9280171D100BA14C2 /* AlertPhotoCamera.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		648B0D6C2801E89F003566DD /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				648B0D6D2801E8AA003566DD /* PlannerModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		648B0D6F2801FAEA003566DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				648B0D702801FB1A003566DD /* RealmManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		64EB5D7427FB770200B69D7C /* Protocols */ = {
@@ -391,11 +416,13 @@
 				646CA6B127FF474400B9F937 /* TaskOptionsTableView.swift in Sources */,
 				642FFC2227F72FE600BF5A89 /* MainTabBarController.swift in Sources */,
 				646CA6A027FDF50800B9F937 /* AlertDate.swift in Sources */,
+				648B0D7328020479003566DD /* UIColor.swift in Sources */,
 				64EB5D7827FC878800B69D7C /* PlannerOptionsTableViewController.swift in Sources */,
 				642FFC1E27F72FE600BF5A89 /* AppDelegate.swift in Sources */,
 				641A3B7F27FA2A8000D42054 /* PlannerTableViewCell.swift in Sources */,
 				64EB5D7627FB774500B69D7C /* PressButtonProtocols.swift in Sources */,
 				64D94CB4280091AA00BA14C2 /* ContactsTableViewCell.swift in Sources */,
+				648B0D6E2801E8AA003566DD /* PlannerModel.swift in Sources */,
 				64EB5D8227FCB5DE00B69D7C /* HeaderOptionsTableViewCell.swift in Sources */,
 				64EB5D8027FCAB0D00B69D7C /* OptionsTableViewCell.swift in Sources */,
 				64D94CB62800A63400BA14C2 /* ContactOptionsTableViewController.swift in Sources */,
@@ -403,6 +430,7 @@
 				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,
 				64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */,
 				646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */,
+				648B0D712801FB1A003566DD /* RealmManager.swift in Sources */,
 				64D94CB82800C75400BA14C2 /* AlertOfUsers.swift in Sources */,
 				646CA6A827FE034400B9F937 /* UsersViewController.swift in Sources */,
 			);

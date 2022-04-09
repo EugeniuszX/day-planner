@@ -64,9 +64,13 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
         
             }
         case 1:
-            alertCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name")
+            alertCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name") { text in
+                
+            }
         case 2:
-            alertCellName(label: cell.nameCellLabel, name: "Task", placeholder: "Enter task")
+            alertCellName(label: cell.nameCellLabel, name: "Task", placeholder: "Enter task") { text in
+                
+            }
         case 3:
             colorCell = cell
            present(colorPicker, animated: true)

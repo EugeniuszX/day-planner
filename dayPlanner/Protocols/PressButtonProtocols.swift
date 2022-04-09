@@ -7,7 +7,12 @@
 
 import Foundation
 
-protocol PressSubmitTaskButtonProtocol: class {
+protocol PressSubmitTaskButtonProtocol: AnyObject {
     func handlePressSubmit(indexPath: IndexPath)
+}
+
+protocol HandleSwitchProtocol: AnyObject {
+    func handleSwitch(value: Bool)
         
 }
+

@@ -11,6 +11,7 @@ import UIKit
 
 class PlannerOptionsTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
+   
     private let idOptionsPlannerCell = "idOptionsPlannerCell"
     private let idOptionsPlannerHeader = "idOptionsPlannerHeader"
     let headerNameArray = ["Date and Time", "Task", "Username", "Color", "Period"]
@@ -21,7 +22,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
                          ["", ""],
                          ["Repeat every 7 days"],
     ]
-    
+    private let plannerModel = PlannerModel()
     let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,14 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
         
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(handlePressSaveButton))
+        
     }
+    @objc private func handlePressSaveButton() {
+        RealmManager.shared.savePlannerModel(model: plannerModel)
+    }
+    
    override func numberOfSections(in tableView: UITableView) -> Int {
        return 5
     }
@@ -55,6 +63,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsPlannerCell, for: indexPath) as! OptionsTableViewCell
         cell.setUpCellPlanner(arrayOfNames: cellNameArray, indexPath: indexPath)
+        cell.handleSwitchDelegate = self
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -76,16 +85,21 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
         switch indexPath {
         case [0, 0]:
             alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-                print(numberWeekday, date)
+                self.plannerModel.plannerDate = date
+                self.plannerModel.plannerWeekday = numberWeekday
             }
         case [0, 1]:
-            alertTime(label: cell.nameCellLabel) { (date) in
-
+            alertTime(label: cell.nameCellLabel) { (time) in
+                self.plannerModel.plannerTime = time
             }
         case [1, 0]:
-            alertCellName(label: cell.nameCellLabel, name: "Task name", placeholder: "Type some name")
+            alertCellName(label: cell.nameCellLabel, name: "Task name", placeholder: "Type some name") { name in
+                self.plannerModel.plannerName = name
+            }
         case [1, 1]:
-            alertCellName(label: cell.nameCellLabel, name: "Priority", placeholder: "Medium, low...")
+            alertCellName(label: cell.nameCellLabel, name: "Priority", placeholder: "Medium, low...") { priority in
+                self.plannerModel.plannerPriority = priority
+            }
         case [2, 0]:
             handleNavigate(viewController: UsersViewController())
         case [3, 0]:
@@ -109,5 +123,12 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
     func handleNavigate(viewController: UIViewController) {
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+
+extension PlannerOptionsTableViewController: HandleSwitchProtocol {
+    func handleSwitch(value: Bool) {
+        plannerModel.plannerRepeat = value
     }
 }

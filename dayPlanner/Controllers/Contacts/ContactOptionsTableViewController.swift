@@ -66,11 +66,17 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
         
         switch indexPath.section {
         case 0:
-            alertCellName(label: cell.nameCellLabel, name: "User name", placeholder: "Steve Jobs")
+            alertCellName(label: cell.nameCellLabel, name: "User name", placeholder: "Steve Jobs") { text in
+                
+            }
         case 1:
-            alertCellName(label: cell.nameCellLabel, name: "User phone", placeholder: "Enter phone")
+            alertCellName(label: cell.nameCellLabel, name: "User phone", placeholder: "Enter phone") { text in
+                
+            }
         case 2:
-            alertCellName(label: cell.nameCellLabel, name: "User mail", placeholder: "Enter mail")
+            alertCellName(label: cell.nameCellLabel, name: "User mail", placeholder: "Enter mail") { text in
+                
+            }
         case 3:
             alertOfUsers(label: cell.nameCellLabel) { (type) in
             }

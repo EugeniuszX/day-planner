@@ -34,6 +34,8 @@ class OptionsTableViewCell: UITableViewCell {
         return repeatSwitch
     }()
     
+    weak var handleSwitchDelegate: HandleSwitchProtocol?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier:  reuseIdentifier)
         
@@ -80,7 +82,7 @@ class OptionsTableViewCell: UITableViewCell {
     }
     
     @objc func handleChangeSwitcher(paramTarget: UISwitch) {
- 
+        handleSwitchDelegate?.handleSwitch(value: paramTarget.isOn)
     }
     
     func setConstraints() {
