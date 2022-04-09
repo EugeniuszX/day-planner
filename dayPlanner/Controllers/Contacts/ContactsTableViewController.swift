@@ -9,18 +9,24 @@ import Foundation
 import UIKit
 
 class ContactsTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
+
     let idContactsCell = "idContactsCell"
 
+    let searchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
-        tableView.bounces = false
+        
         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
     
         tableView.separatorStyle = .singleLine
         title = "Contacts"
+        
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
         
        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
