@@ -64,10 +64,10 @@ class OptionsTableViewCell: UITableViewCell {
         }
     }
     
-    func setUpCellTasks(nameArray: [String], indexPath: IndexPath) {
-        nameCellLabel.text = nameArray[indexPath.section]
+    func setUpCellTasks(nameArray: [[String]], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
         
-        if indexPath == [3,0] {
+        if indexPath == [2,0] {
             backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         }
     }

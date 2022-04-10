@@ -23,6 +23,7 @@
 		648B0D6E2801E8AA003566DD /* PlannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D6D2801E8AA003566DD /* PlannerModel.swift */; };
 		648B0D712801FB1A003566DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D702801FB1A003566DD /* RealmManager.swift */; };
 		648B0D7328020479003566DD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D7228020479003566DD /* UIColor.swift */; };
+		648B0D752802C6FA003566DD /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D742802C6FA003566DD /* TaskModel.swift */; };
 		64D94CB22800869800BA14C2 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB12800869800BA14C2 /* ContactsTableViewController.swift */; };
 		64D94CB4280091AA00BA14C2 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB3280091AA00BA14C2 /* ContactsTableViewCell.swift */; };
 		64D94CB62800A63400BA14C2 /* ContactOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB52800A63400BA14C2 /* ContactOptionsTableViewController.swift */; };
@@ -59,6 +60,7 @@
 		648B0D6D2801E8AA003566DD /* PlannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerModel.swift; sourceTree = "<group>"; };
 		648B0D702801FB1A003566DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		648B0D7228020479003566DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		648B0D742802C6FA003566DD /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		64D94CB12800869800BA14C2 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		64D94CB3280091AA00BA14C2 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		64D94CB52800A63400BA14C2 /* ContactOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionsTableViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				648B0D6D2801E8AA003566DD /* PlannerModel.swift */,
+				648B0D742802C6FA003566DD /* TaskModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				64D94CB62800A63400BA14C2 /* ContactOptionsTableViewController.swift in Sources */,
 				64EB5D7327FB4A6400B69D7C /* TasksTableViewCell.swift in Sources */,
 				64EB5D6F27FB0EF200B69D7C /* UILabel.swift in Sources */,
+				648B0D752802C6FA003566DD /* TaskModel.swift in Sources */,
 				64EB5D7127FB3BA000B69D7C /* UIFont.swift in Sources */,
 				646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */,
 				648B0D712801FB1A003566DD /* RealmManager.swift in Sources */,

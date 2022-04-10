@@ -41,12 +41,10 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
        
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(handlePressSaveButton))
-        
     }
     @objc private func handlePressSaveButton() {
         RealmManager.shared.savePlannerModel(model: plannerModel)
     }
-    
    override func numberOfSections(in tableView: UITableView) -> Int {
        return 5
     }

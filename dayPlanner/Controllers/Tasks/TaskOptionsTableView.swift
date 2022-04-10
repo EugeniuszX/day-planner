@@ -12,8 +12,8 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
     private var colorCell: OptionsTableViewCell?
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
-    let headerNameArray = ["Date and Time", "Name", "Task", "Color"]
-    let cellNameArray = ["Date", "Task", "Name", ""]
+    let headerNameArray = ["Date and Time", "Task", "Color"]
+    let cellNameArray = [["Date"],[ "Name", "Priority"], [""]]
     let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +32,16 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
        
     }
    override func numberOfSections(in tableView: UITableView) -> Int {
-       return 4
+       return 3
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 1
+        switch section {
+        case 0: return 1
+        case 1: return 2
+        case 2: return 1
+        default:
+            return 1
+        }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionsTableViewCell
@@ -58,20 +64,20 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
         
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         navigationController?.navigationBar.topItem?.title = "Options"
-        switch indexPath.section {
-        case 0:
+        switch indexPath {
+        case [0, 0]:
             alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
         
             }
-        case 1:
-            alertCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name") { text in
+        case [1, 0]:
+            alertCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter task name") { text in
                 
             }
-        case 2:
-            alertCellName(label: cell.nameCellLabel, name: "Task", placeholder: "Enter task") { text in
+        case [1,1]:
+            alertCellName(label: cell.nameCellLabel, name: "Priority", placeholder: "Medium, low...") { text in
                 
             }
-        case 3:
+        case [2,0]:
             colorCell = cell
            present(colorPicker, animated: true)
         default:
