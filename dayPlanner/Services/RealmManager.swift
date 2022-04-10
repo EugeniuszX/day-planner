@@ -21,4 +21,10 @@ class RealmManager {
             localRealm.add(model)
         }
     }
+    
+    func saveTaskModel(model: TaskModel) {
+        try! localRealm.write {
+            localRealm.add(model)
+        }
+    }
 }

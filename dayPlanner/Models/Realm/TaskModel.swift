@@ -8,12 +8,10 @@
 import RealmSwift
 
 class TaskModel: Object {
-    
     @Persisted var taskDate = Date()
     @Persisted var taskName = ""
     @Persisted var taskDescription: String = ""
-    @Persisted var plannerPriority: String = ""
-    @Persisted var plannerColor: String = "FFFFFF"
-
-    
+    @Persisted var taskPriority: String = ""
+    @Persisted var taskColor: String = "FFFFFF"
+    @Persisted var taskWeekday: Int = 1
 }

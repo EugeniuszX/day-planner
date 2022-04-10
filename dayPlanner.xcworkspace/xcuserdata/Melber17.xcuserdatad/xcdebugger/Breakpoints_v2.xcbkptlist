@@ -62,8 +62,8 @@
             filePath = "dayPlanner/Models/Realm/TaskModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "TaskModel"
             landmarkType = "3">
          </BreakpointContent>

@@ -110,10 +110,14 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
     
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         let selectedColor = viewController.selectedColor
+        let hexSelectedColor = UIColor().hexStringFromColor(color: selectedColor)
+        self.plannerModel.plannerColor = hexSelectedColor
         colorCell?.backgroundViewCell.backgroundColor = selectedColor
     }
     func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
         let selectedColor = viewController.selectedColor
+        let hexSelectedColor = UIColor().hexStringFromColor(color: selectedColor)
+        self.plannerModel.plannerColor = hexSelectedColor
         colorCell?.backgroundViewCell.backgroundColor = selectedColor
     }
  

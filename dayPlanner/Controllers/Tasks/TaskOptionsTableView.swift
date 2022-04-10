@@ -7,14 +7,17 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
+    private let taskModel = TaskModel()
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
     let headerNameArray = ["Date and Time", "Task", "Color"]
-    let cellNameArray = [["Date"],[ "Name", "Priority"], [""]]
+    let cellNameArray = [["Date"],[ "Name", "Description", "Priority"], [""]]
     let colorPicker = UIColorPickerViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -30,14 +33,20 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
         
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(handlePressSaveButton))
     }
+    
+    @objc private func handlePressSaveButton() {
+        RealmManager.shared.saveTaskModel(model: taskModel)
+    }
+    
    override func numberOfSections(in tableView: UITableView) -> Int {
        return 3
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 1
-        case 1: return 2
+        case 1: return 3
         case 2: return 1
         default:
             return 1
@@ -67,15 +76,20 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
         switch indexPath {
         case [0, 0]:
             alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-        
+                self.taskModel.taskDate = date
+                self.taskModel.taskWeekday = numberWeekday
             }
         case [1, 0]:
-            alertCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter task name") { text in
-                
+            alertCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter task name") { taskName in
+                self.taskModel.taskName = taskName
             }
         case [1,1]:
-            alertCellName(label: cell.nameCellLabel, name: "Priority", placeholder: "Medium, low...") { text in
-                
+            alertCellName(label: cell.nameCellLabel, name: "Description", placeholder: "Enter some description") { taskDescription in
+                self.taskModel.taskDescription = taskDescription
+            }
+        case [1,2]:
+            alertCellName(label: cell.nameCellLabel, name: "Priority", placeholder: "Medium, low...") { taskPriority in
+                self.taskModel.taskPriority = taskPriority
             }
         case [2,0]:
             colorCell = cell
@@ -87,10 +101,14 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
     
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         let selectedColor = viewController.selectedColor
+        let hexSelectedColor = UIColor().hexStringFromColor(color: selectedColor)
+        self.taskModel.taskColor = hexSelectedColor
         colorCell?.backgroundViewCell.backgroundColor = selectedColor
     }
     func colorPickerViewControllerDidSelectColor(_ viewController: UIColorPickerViewController) {
         let selectedColor = viewController.selectedColor
+        let hexSelectedColor = UIColor().hexStringFromColor(color: selectedColor)
+        self.taskModel.taskColor = hexSelectedColor
         colorCell?.backgroundViewCell.backgroundColor = selectedColor
     }
  
