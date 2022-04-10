@@ -5,7 +5,7 @@
 //  Created by Evgeniy on 01/04/2022.
 //
 
-import Foundation
+import RealmSwift
 import UIKit
 import SwiftUI
 import FSCalendar
@@ -34,6 +34,9 @@ class PlannerViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    let localRealm = try! Realm()
+    var plannerArray: Results<PlannerModel>!
     
     private let idPlannerCell = "idPlannerCell"
     
@@ -124,7 +127,21 @@ extension PlannerViewController: FSCalendarDataSource, FSCalendarDelegate {
         view.layoutIfNeeded()
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else {  return }
+        
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second: -1)
+            
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
+        let predicateRepeat = NSPredicate(format: "plannerWeekday = \(weekday) AND plannerRepeat = true")
+        let predicateUnrepeat = NSPredicate(format: "plannerRepeat = false AND plannerDate BETWEEN %@", [dateStart, dateEnd])
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
+        plannerArray = localRealm.objects(PlannerModel.self).filter(compound)
     }
 }
 
