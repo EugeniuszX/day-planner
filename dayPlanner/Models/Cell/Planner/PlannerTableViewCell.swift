@@ -8,11 +8,11 @@
 import UIKit
 
 class PlannerTableViewCell: UITableViewCell {
-    let taskName = UILabel(text: "Go to shoppping", font: .avenirNextDemiBold20())
-    let userName = UILabel(text: "Melber17", font: .avenirNextDemiBold14(), alignment: .right)
-    let taskTime = UILabel(text: "10:00", font: .avenirNextDemiBold20())
+    let taskName = UILabel(text: "", font: .avenirNextDemiBold20())
+    let userName = UILabel(text: "", font: .avenirNextDemiBold14(), alignment: .right)
+    let taskTime = UILabel(text: "", font: .avenirNextDemiBold20())
     let taskPriorityLabel = UILabel(text: "Priority:", font: .avenirNext14(), alignment: .right)
-    let taskPriority = UILabel(text: "Medium", font: .avenirNext14())
+    let taskPriority = UILabel(text: "", font: .avenirNext14())
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -27,6 +27,16 @@ class PlannerTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(model: PlannerModel) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        taskName.text = model.plannerName
+        userName.text = model.plannerUser
+        taskTime.text = dateFormatter.string(from: model.plannerTime)
+        taskPriority.text = model.plannerPriority
+        backgroundColor = UIColor().colorFromHex(model.plannerColor)
     }
     
     func setConstraints() {

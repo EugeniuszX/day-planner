@@ -55,7 +55,7 @@ class PlannerViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(PlannerTableViewCell.self, forCellReuseIdentifier: idPlannerCell)
-        
+        plannerOnDay(date: Date())
         setConstraints()
         swipeActions()
         
@@ -97,6 +97,24 @@ class PlannerViewController: UIViewController {
     @objc private func handleSwipe() {
         handleToggleVisibleCalendar()
     }
+    private func plannerOnDay(date: Date) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else {  return }
+        
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second: -1)
+            
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
+        let predicateRepeat = NSPredicate(format: "plannerWeekday = \(weekday) AND plannerRepeat = true")
+        let predicateUnrepeat = NSPredicate(format: "plannerRepeat = false AND plannerDate BETWEEN %@", [dateStart, dateEnd])
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
+        plannerArray = localRealm.objects(PlannerModel.self).filter(compound).sorted(byKeyPath: "plannerTime")
+        tableView.reloadData()
+    }
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
@@ -104,12 +122,14 @@ class PlannerViewController: UIViewController {
 
 extension PlannerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return plannerArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idPlannerCell, for: indexPath) as! PlannerTableViewCell
         
+        let model = plannerArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -127,21 +147,7 @@ extension PlannerViewController: FSCalendarDataSource, FSCalendarDelegate {
         view.layoutIfNeeded()
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.weekday], from: date)
-        guard let weekday = components.weekday else {  return }
-        
-        let dateStart = date
-        let dateEnd: Date = {
-            let components = DateComponents(day: 1, second: -1)
-            
-            return Calendar.current.date(byAdding: components, to: dateStart)!
-        }()
-        
-        let predicateRepeat = NSPredicate(format: "plannerWeekday = \(weekday) AND plannerRepeat = true")
-        let predicateUnrepeat = NSPredicate(format: "plannerRepeat = false AND plannerDate BETWEEN %@", [dateStart, dateEnd])
-        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
-        plannerArray = localRealm.objects(PlannerModel.self).filter(compound)
+        plannerOnDay(date: date)
     }
 }
 
