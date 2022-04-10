@@ -11,7 +11,7 @@ import RealmSwift
 
 class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
-    private let taskModel = TaskModel()
+    private var taskModel = TaskModel()
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
     let headerNameArray = ["Date and Time", "Task", "Color"]
@@ -38,6 +38,8 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
     
     @objc private func handlePressSaveButton() {
         RealmManager.shared.saveTaskModel(model: taskModel)
+        taskModel = TaskModel()
+        tableView.reloadRows(at: [[0,0], [1,0],[1,1],[1,2], [2 ,0]], with: .fade)
     }
     
    override func numberOfSections(in tableView: UITableView) -> Int {

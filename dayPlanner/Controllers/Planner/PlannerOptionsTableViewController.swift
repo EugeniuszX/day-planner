@@ -22,7 +22,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
                          ["", ""],
                          ["Repeat every 7 days"],
     ]
-    private let plannerModel = PlannerModel()
+    private var plannerModel = PlannerModel()
     let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,9 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
     }
     @objc private func handlePressSaveButton() {
         RealmManager.shared.savePlannerModel(model: plannerModel)
+        plannerModel = PlannerModel()
+        alertSuccessful(title: "Success")
+        tableView.reloadRows(at: [[0,0],[0,1], [1,0],[1,1],[2,0],[3,0],[3,1], [4 ,0]], with: .fade)
     }
    override func numberOfSections(in tableView: UITableView) -> Int {
        return 5
