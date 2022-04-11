@@ -34,7 +34,8 @@ class PlannerTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "HH:mm"
         taskName.text = model.plannerName
         userName.text = model.plannerUser
-        taskTime.text = dateFormatter.string(from: model.plannerTime)
+        guard let plannerTime = model.plannerTime else { return }
+        taskTime.text = dateFormatter.string(from: plannerTime)
         taskPriority.text = model.plannerPriority
         backgroundColor = UIColor().colorFromHex(model.plannerColor)
     }

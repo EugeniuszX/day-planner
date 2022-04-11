@@ -43,9 +43,17 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(handlePressSaveButton))
     }
     @objc private func handlePressSaveButton() {
+        
+        if plannerModel.plannerDate == nil || plannerModel.plannerTime == nil || plannerModel.plannerName == "Unknown" {
+            alertSuccessful(title: "Error", message: "Required fields: date, time, name")
+            
+            return
+        }
+        
+        
         RealmManager.shared.savePlannerModel(model: plannerModel)
         plannerModel = PlannerModel()
-        alertSuccessful(title: "Success")
+        alertSuccessful(title: "Success", message: nil)
         tableView.reloadRows(at: [[0,0],[0,1], [1,0],[1,1],[2,0],[3,0],[3,1], [4 ,0]], with: .fade)
     }
    override func numberOfSections(in tableView: UITableView) -> Int {

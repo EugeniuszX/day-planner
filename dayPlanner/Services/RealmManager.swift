@@ -27,4 +27,10 @@ class RealmManager {
             localRealm.add(model)
         }
     }
+    
+    func deletPlannerModel(model: PlannerModel) {
+        try! localRealm.write {
+            localRealm.delete(model)
+        }
+    }
 }
