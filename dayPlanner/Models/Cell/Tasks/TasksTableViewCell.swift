@@ -9,8 +9,8 @@ import UIKit
 
 class TasksTableViewCell: UITableViewCell {
     
-    let taskName = UILabel(text: "Go to shopping", font: .avenirNextDemiBold20())
-    let taskDescription = UILabel(text: "Buy some closes", font: .avenirNext14())
+    let taskName = UILabel(text: "", font: .avenirNextDemiBold20())
+    let taskDescription = UILabel(text: "", font: .avenirNext14())
     
     let submitButton: UIButton = {
         let button = UIButton()
@@ -35,6 +35,16 @@ class TasksTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
         submitButton.addTarget(self, action: #selector(handlePressSubmit), for: .touchUpInside)
+    }
+    // TODO: Add priority label
+    func configure(model: TaskModel) {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "HH:mm"
+        taskName.text = model.taskName
+        taskDescription.text = model.taskDescription
+//        guard let taskTime = model.taskDate else { return }
+
+        backgroundColor = UIColor().colorFromHex(model.taskColor)
     }
     
     required init?(coder: NSCoder) {

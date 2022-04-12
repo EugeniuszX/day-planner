@@ -50,13 +50,13 @@ class PlannerViewController: UIViewController {
        
         title = "Planner"
         view.backgroundColor = .white
-        
+       
         
         calendar.delegate = self
         calendar.dataSource = self
         
         calendar.scope = .week
-        
+       
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(PlannerTableViewCell.self, forCellReuseIdentifier: idPlannerCell)
@@ -132,7 +132,6 @@ extension PlannerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idPlannerCell, for: indexPath) as! PlannerTableViewCell
-        
         let model = plannerArray[indexPath.row]
         cell.configure(model: model)
         return cell

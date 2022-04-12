@@ -5,14 +5,16 @@
 //  Created by Evgeniy on 01/04/2022.
 //
 
-import Foundation
+
 import FSCalendar
+import RealmSwift
 import SwiftUI
 import UIKit
 
 
 class TasksViewController: UIViewController {
-
+    let localRealm = try! Realm()
+    var tasksArray: Results<TaskModel>!
     var calendarHeightConstraint: NSLayoutConstraint!
     private var calendar: FSCalendar = {
         let calendar = FSCalendar()
@@ -38,17 +40,21 @@ class TasksViewController: UIViewController {
     
     let idTasksCell = "idTasksCell"
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
         title = "Tasks"
         view.backgroundColor = .white
         
-        
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scope = .week
-        
+        tasksOnDay(date: Date())
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TasksTableViewCell.self, forCellReuseIdentifier: idTasksCell)
@@ -97,18 +103,28 @@ class TasksViewController: UIViewController {
 
 extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return tasksArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) as! TasksTableViewCell
         cell.cellTaskDelegate = self
         cell.index = indexPath
-        
+        let model = tasksArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    private func tasksOnDay(date: Date) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else {  return }
+        let compound = NSCompoundPredicate(format: "taskWeekday = \(weekday)")
+        tasksArray = localRealm.objects(TaskModel.self).filter(compound)
+        tableView.reloadData()
     }
 }
 
@@ -133,7 +149,7 @@ extension TasksViewController: FSCalendarDataSource, FSCalendarDelegate {
         view.layoutIfNeeded()
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        tasksOnDay(date: date)
     }
 }
 

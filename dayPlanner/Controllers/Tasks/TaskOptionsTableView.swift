@@ -44,7 +44,6 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
             return
         }
         
-        
         RealmManager.shared.saveTaskModel(model: taskModel)
         taskModel = TaskModel()
         tableView.reloadRows(at: [[0,0], [1,0],[1,1],[1,2], [2 ,0]], with: .fade)
