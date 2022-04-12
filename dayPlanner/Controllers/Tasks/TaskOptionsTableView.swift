@@ -37,6 +37,14 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
     }
     
     @objc private func handlePressSaveButton() {
+        
+        
+        if taskModel.taskDate == nil || taskModel.taskName == "Unknown"  || taskModel.taskDescription == "Unknown" {
+            alertSuccessful(title: "Error", message: "Required fields: date, name")
+            return
+        }
+        
+        
         RealmManager.shared.saveTaskModel(model: taskModel)
         taskModel = TaskModel()
         tableView.reloadRows(at: [[0,0], [1,0],[1,1],[1,2], [2 ,0]], with: .fade)
