@@ -45,6 +45,12 @@ class TasksTableViewCell: UITableViewCell {
 //        guard let taskTime = model.taskDate else { return }
 
         backgroundColor = UIColor().colorFromHex(model.taskColor)
+        print("model =>", model)
+        if model.isTaskDone {
+            submitButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle.fill"), for: .normal)
+        } else {
+            submitButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+        }
     }
     
     required init?(coder: NSCoder) {

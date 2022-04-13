@@ -28,9 +28,19 @@ class RealmManager {
         }
     }
     
-    func deletPlannerModel(model: PlannerModel) {
+    func deletePlannerModel(model: PlannerModel) {
         try! localRealm.write {
             localRealm.delete(model)
+        }
+    }
+    func deleteTaskModel(model: TaskModel) {
+        try! localRealm.write {
+            localRealm.delete(model)
+        }
+    }
+    func updateReadyButtonTaskModel(task: TaskModel, bool: Bool) {
+        try! localRealm.write {
+            task.isTaskDone = bool
         }
     }
 }

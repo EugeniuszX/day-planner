@@ -143,7 +143,7 @@ extension PlannerViewController: UITableViewDelegate, UITableViewDataSource {
         let editingRow = plannerArray[indexPath.row]
         
         let handleDeleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
-            RealmManager.shared.deletPlannerModel(model: editingRow)
+            RealmManager.shared.deletePlannerModel(model: editingRow)
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [handleDeleteAction])

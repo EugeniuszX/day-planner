@@ -14,4 +14,5 @@ class TaskModel: Object {
     @Persisted var taskPriority: String = ""
     @Persisted var taskColor: String = "FFFFFF"
     @Persisted var taskWeekday: Int = 1
+    @Persisted var isTaskDone: Bool = false
 }
