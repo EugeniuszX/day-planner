@@ -141,12 +141,13 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TasksViewController: PressSubmitTaskButtonProtocol {
     func handlePressSubmit(indexPath: IndexPath) {
-        print("tap")
+        let task = tasksArray[indexPath.row]
+        RealmManager.shared.updateReadyButtonTaskModel(task: task, bool: !task.isTaskDone)
+        tableView.reloadData()
     }
     
     
 }
-
 
 
 // MARK: FSCalendarDataSource, FSCalendarDelegate

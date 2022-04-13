@@ -12,9 +12,9 @@ class TasksTableViewCell: UITableViewCell {
     let taskName = UILabel(text: "", font: .avenirNextDemiBold20())
     let taskDescription = UILabel(text: "", font: .avenirNext14())
     
-    let submitButton: UIButton = {
+    let readyButton: UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName: "circle.circle"), for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -34,7 +34,7 @@ class TasksTableViewCell: UITableViewCell {
 
         self.selectionStyle = .none
         
-        submitButton.addTarget(self, action: #selector(handlePressSubmit), for: .touchUpInside)
+        readyButton.addTarget(self, action: #selector(handlePressSubmit), for: .touchUpInside)
     }
     // TODO: Add priority label
     func configure(model: TaskModel) {
@@ -45,11 +45,10 @@ class TasksTableViewCell: UITableViewCell {
 //        guard let taskTime = model.taskDate else { return }
 
         backgroundColor = UIColor().colorFromHex(model.taskColor)
-        print("model =>", model)
         if model.isTaskDone {
-            submitButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle.fill"), for: .normal)
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle.fill"), for: .normal)
         } else {
-            submitButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
         }
     }
     
@@ -63,19 +62,19 @@ class TasksTableViewCell: UITableViewCell {
     }
     
     func setConstraints() {
-        self.contentView.addSubview(submitButton)
+        self.contentView.addSubview(readyButton)
         
         NSLayoutConstraint.activate([
-            submitButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            submitButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            submitButton.heightAnchor.constraint(equalToConstant: 40),
-            submitButton.widthAnchor.constraint(equalToConstant: 40),
+            readyButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            readyButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            readyButton.heightAnchor.constraint(equalToConstant: 40),
+            readyButton.widthAnchor.constraint(equalToConstant: 40),
         ])
         
         self.addSubview(taskName)
         NSLayoutConstraint.activate([
             taskName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            taskName.trailingAnchor.constraint(equalTo: submitButton.leadingAnchor, constant: -5),
+            taskName.trailingAnchor.constraint(equalTo: readyButton.leadingAnchor, constant: -5),
             taskName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             taskName.heightAnchor.constraint(equalToConstant: 25),
         ])
@@ -83,9 +82,10 @@ class TasksTableViewCell: UITableViewCell {
         self.addSubview(taskDescription)
         NSLayoutConstraint.activate([
             taskDescription.topAnchor.constraint(equalTo: taskName.bottomAnchor, constant: 5),
-            taskDescription.trailingAnchor.constraint(equalTo: submitButton.leadingAnchor, constant: -5),
+            taskDescription.trailingAnchor.constraint(equalTo: readyButton.leadingAnchor, constant: -5),
             taskDescription.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             taskDescription.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
         ])
     }
 }
+
