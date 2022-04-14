@@ -52,6 +52,15 @@ class ContactsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(model: ContactModel) {
+        nameLabel.text = model.contactName
+        phoneLabel.text = model.contactPhone
+        mailLabel.text = model.contactMail
+        
+        guard let data = model.contactImage, let image = UIImage(data: data) else {return}
+        userImageView.image = image
+    }
+    
     
     func setConstraints() {
         self.addSubview(userImageView)

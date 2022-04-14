@@ -10,9 +10,9 @@ import UIKit
 
 class ContactOptionsTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
     private var colorCell: OptionsTableViewCell?
-    let idOptionsContactCell = "idOptionsContactCell"
-    let idOptionsContactHeader = "idOptionsContactHeader"
-    let headerNameArray = ["Name", "Phone", "Mail", "Type", "Choose image"]
+    private let idOptionsContactCell = "idOptionsContactCell"
+    private let idOptionsContactHeader = "idOptionsContactHeader"
+    private let headerNameArray = ["Name", "Phone", "Mail", "Type", "Choose image"]
     
     let cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     

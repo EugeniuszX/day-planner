@@ -25,6 +25,7 @@
 		648B0D7328020479003566DD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D7228020479003566DD /* UIColor.swift */; };
 		648B0D752802C6FA003566DD /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D742802C6FA003566DD /* TaskModel.swift */; };
 		648B0D772802ED93003566DD /* AlertSuccessful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D762802ED93003566DD /* AlertSuccessful.swift */; };
+		649B5FBD28082D080067B17A /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B5FBC28082D080067B17A /* ContactModel.swift */; };
 		64D94CB22800869800BA14C2 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB12800869800BA14C2 /* ContactsTableViewController.swift */; };
 		64D94CB4280091AA00BA14C2 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB3280091AA00BA14C2 /* ContactsTableViewCell.swift */; };
 		64D94CB62800A63400BA14C2 /* ContactOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D94CB52800A63400BA14C2 /* ContactOptionsTableViewController.swift */; };
@@ -63,6 +64,7 @@
 		648B0D7228020479003566DD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		648B0D742802C6FA003566DD /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		648B0D762802ED93003566DD /* AlertSuccessful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSuccessful.swift; sourceTree = "<group>"; };
+		649B5FBC28082D080067B17A /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		64D94CB12800869800BA14C2 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		64D94CB3280091AA00BA14C2 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		64D94CB52800A63400BA14C2 /* ContactOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionsTableViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				648B0D6D2801E8AA003566DD /* PlannerModel.swift */,
 				648B0D742802C6FA003566DD /* TaskModel.swift */,
+				649B5FBC28082D080067B17A /* ContactModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			files = (
 				64596B3D27F7567900679965 /* PlannerViewController.swift in Sources */,
 				64D94CBA280171D100BA14C2 /* AlertPhotoCamera.swift in Sources */,
+				649B5FBD28082D080067B17A /* ContactModel.swift in Sources */,
 				646CA6A227FDFE1100B9F937 /* AlertTime.swift in Sources */,
 				64D94CB22800869800BA14C2 /* ContactsTableViewController.swift in Sources */,
 				648B0D772802ED93003566DD /* AlertSuccessful.swift in Sources */,

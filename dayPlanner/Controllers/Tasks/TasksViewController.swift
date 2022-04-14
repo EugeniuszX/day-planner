@@ -146,7 +146,6 @@ extension TasksViewController: PressSubmitTaskButtonProtocol {
         tableView.reloadData()
     }
     
-    
 }
 
 

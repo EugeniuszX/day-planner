@@ -19,9 +19,11 @@ class TasksTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
     
     weak var cellTaskDelegate: PressSubmitTaskButtonProtocol?
     var index: IndexPath?
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier:  reuseIdentifier)

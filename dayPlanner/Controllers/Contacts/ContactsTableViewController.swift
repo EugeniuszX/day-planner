@@ -7,12 +7,24 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class ContactsTableViewController: UITableViewController, UIColorPickerViewControllerDelegate {
-
-    let idContactsCell = "idContactsCell"
-
-    let searchController = UISearchController()
+    let localRealm = try! Realm()
+    private let idContactsCell = "idContactsCell"
+    
+    private let searchController = UISearchController()
+    
+    var contactsArray: Results<ContactModel>!
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +36,9 @@ class ContactsTableViewController: UITableViewController, UIColorPickerViewContr
     
         tableView.separatorStyle = .singleLine
         title = "Contacts"
-        
+        contactsArray = localRealm.objects(ContactModel.self)
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
-        
        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
     }
@@ -37,10 +48,13 @@ class ContactsTableViewController: UITableViewController, UIColorPickerViewContr
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 5
+        return contactsArray.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
+        
+        let model = contactsArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
