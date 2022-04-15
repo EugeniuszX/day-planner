@@ -10,20 +10,12 @@ import UIKit
 import RealmSwift
 
 class ContactsViewController: UIViewController, UIColorPickerViewControllerDelegate {
-    let localRealm = try! Realm()
-    private let idContactsCell = "idContactsCell"
-    
-    private let searchController = UISearchController()
-    
-    var contactsArray: Results<ContactModel>!
-    
+  
     private let segmentedControll: UISegmentedControl = {
         let segmentedControll = UISegmentedControl(items: ["Users", "Strangers"])
         segmentedControll.selectedSegmentIndex = 0
         return segmentedControll
     }()
-    
-     
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -34,6 +26,24 @@ class ContactsViewController: UIViewController, UIColorPickerViewControllerDeleg
         
         return tableView
     }()
+    
+    let localRealm = try! Realm()
+    private let idContactsCell = "idContactsCell"
+    
+    private let searchController = UISearchController()
+    
+    var contactsArray: Results<ContactModel>!
+    var filterredArray: Results<ContactModel>!
+    
+    var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return true }
+        
+        return text.isEmpty
+    }
+    
+    var isSearchBarActive: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,9 +61,10 @@ class ContactsViewController: UIViewController, UIColorPickerViewControllerDeleg
         view.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
         title = "Contacts"
         contactsArray = localRealm.objects(ContactModel.self).filter("contactType == 'User'")
+        
         searchController.searchBar.placeholder = "Search"
-        
-        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePressAddButton))
             
@@ -83,12 +94,12 @@ class ContactsViewController: UIViewController, UIColorPickerViewControllerDeleg
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactsArray.count
+         return (isSearchBarActive ? filterredArray.count : contactsArray.count)
     }
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
         
-        let model = contactsArray[indexPath.row]
+         let model = (isSearchBarActive ? filterredArray[indexPath.row] : contactsArray[indexPath.row])
         cell.configure(model: model)
         return cell
     }
@@ -121,5 +132,16 @@ extension ContactsViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
+    }
+}
+
+
+extension ContactsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        handleFilterContacts(searchController.searchBar.text!)
+    }
+    private func handleFilterContacts(_ searchText: String) {
+        filterredArray = contactsArray.filter("contactName CONTAINS[c] %@", searchText)
+        tableView.reloadData()
     }
 }
