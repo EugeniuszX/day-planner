@@ -84,9 +84,16 @@ class ContactsViewController: UIViewController, UIColorPickerViewControllerDeleg
         }
     }
     
-    @objc func handlePressAddButton() {
+    @objc private func handlePressAddButton() {
         let contactsOption = ContactOptionsTableViewController()
         navigationController?.pushViewController(contactsOption, animated: true) 
+    }
+    
+    @objc private func handlePressEditContact(contactModel: ContactModel) {
+        let contactOption = ContactOptionsTableViewController()
+        contactOption.contactModel = contactModel
+        contactOption.isEditModel = true
+        navigationController?.pushViewController(contactOption, animated: true)
     }
 
 
@@ -107,7 +114,8 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         return 80
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        let model = contactsArray[indexPath.row]
+        handlePressEditContact(contactModel: model)
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editingRow = contactsArray[indexPath.row]

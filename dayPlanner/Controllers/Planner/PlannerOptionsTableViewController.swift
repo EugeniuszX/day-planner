@@ -53,6 +53,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
         
         RealmManager.shared.savePlannerModel(model: plannerModel)
         plannerModel = PlannerModel()
+        cellNameArray[2][0] = "User name"
         alertSuccessful(title: "Success", message: nil)
         tableView.reloadRows(at: [[0,0],[0,1], [1,0],[1,1],[2,0],[3,0],[3,1], [4 ,0]], with: .fade)
     }

@@ -14,10 +14,12 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
     private let idOptionsContactHeader = "idOptionsContactHeader"
     
     private let headerNameArray = ["Name", "Phone", "Mail", "Type", "Choose image"]
-    private let cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
+    private var cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
     private var imageIsChanged = false
-    private var contactModel = ContactModel()
+    var contactModel = ContactModel()
+    var isEditModel = false
+    
     
     let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
@@ -31,7 +33,7 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
         tableView.register(HeaderOptionsTableViewCell.self,  forHeaderFooterViewReuseIdentifier: idOptionsContactHeader)
     
         tableView.separatorStyle = .none
-        title = "Option Planner"
+        title = "Options Contact"
        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(handlePressSave))
     }
@@ -74,7 +76,21 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactCell, for: indexPath) as! OptionsTableViewCell
-        cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath)
+        
+        if isEditModel {
+            cellNameArray = [
+                contactModel.contactName,
+                contactModel.contactPhone,
+                contactModel.contactMail,
+                contactModel.contactType,
+                ""
+            ]
+            cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath)
+        } else {
+            cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath)
+        }
+        
+       
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
