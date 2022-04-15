@@ -91,7 +91,7 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
         return header
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 30
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
