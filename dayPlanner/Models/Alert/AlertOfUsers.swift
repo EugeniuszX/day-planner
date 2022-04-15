@@ -13,7 +13,7 @@ extension UIViewController {
         
         let userFriendAction = UIAlertAction(title: "User", style: .default) { _ in
             label.text = "User"
-            let typeUser = "Friend"
+            let typeUser = "User"
             handlerSubmit(typeUser)
         }
         
