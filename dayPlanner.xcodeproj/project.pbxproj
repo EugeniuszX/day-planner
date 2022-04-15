@@ -18,7 +18,7 @@
 		646CA6A027FDF50800B9F937 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA69F27FDF50800B9F937 /* AlertDate.swift */; };
 		646CA6A227FDFE1100B9F937 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A127FDFE1100B9F937 /* AlertTime.swift */; };
 		646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A327FDFF9900B9F937 /* AlertCellName.swift */; };
-		646CA6A827FE034400B9F937 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A727FE034400B9F937 /* UsersViewController.swift */; };
+		646CA6A827FE034400B9F937 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6A727FE034400B9F937 /* UsersTableViewController.swift */; };
 		646CA6B127FF474400B9F937 /* TaskOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA6B027FF474400B9F937 /* TaskOptionsTableView.swift */; };
 		648B0D6E2801E8AA003566DD /* PlannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D6D2801E8AA003566DD /* PlannerModel.swift */; };
 		648B0D712801FB1A003566DD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B0D702801FB1A003566DD /* RealmManager.swift */; };
@@ -57,7 +57,7 @@
 		646CA69F27FDF50800B9F937 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		646CA6A127FDFE1100B9F937 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
 		646CA6A327FDFF9900B9F937 /* AlertCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCellName.swift; sourceTree = "<group>"; };
-		646CA6A727FE034400B9F937 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		646CA6A727FE034400B9F937 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		646CA6B027FF474400B9F937 /* TaskOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableView.swift; sourceTree = "<group>"; };
 		648B0D6D2801E8AA003566DD /* PlannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerModel.swift; sourceTree = "<group>"; };
 		648B0D702801FB1A003566DD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 		64EB5D7B27FC88C100B69D7C /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				646CA6A727FE034400B9F937 /* UsersViewController.swift */,
+				646CA6A727FE034400B9F937 /* UsersTableViewController.swift */,
 				64D94CB12800869800BA14C2 /* ContactsViewController.swift */,
 				64D94CB52800A63400BA14C2 /* ContactOptionsTableViewController.swift */,
 			);
@@ -444,7 +444,7 @@
 				646CA6A427FDFF9900B9F937 /* AlertCellName.swift in Sources */,
 				648B0D712801FB1A003566DD /* RealmManager.swift in Sources */,
 				64D94CB82800C75400BA14C2 /* AlertOfUsers.swift in Sources */,
-				646CA6A827FE034400B9F937 /* UsersViewController.swift in Sources */,
+				646CA6A827FE034400B9F937 /* UsersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

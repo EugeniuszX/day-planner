@@ -16,13 +16,13 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
     private let idOptionsPlannerHeader = "idOptionsPlannerHeader"
     let headerNameArray = ["Date and Time", "Task", "Username", "Color", "Period"]
     
-    let cellNameArray = [["Date", "Time"],
+    var cellNameArray = [["Date", "Time"],
                          ["Name", "Priority"],
                          ["User name"],
                          ["", ""],
                          ["Repeat every 7 days"],
     ]
-    private var plannerModel = PlannerModel()
+    var plannerModel = PlannerModel()
     let colorPicker = UIColorPickerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +110,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
                 self.plannerModel.plannerPriority = priority
             }
         case [2, 0]:
-            handleNavigate(viewController: UsersViewController())
+            handleNavigate(viewController: UsersTableViewController())
         case [3, 0]:
             colorCell = cell
            present(colorPicker, animated: true)

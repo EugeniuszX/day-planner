@@ -57,8 +57,11 @@ class ContactsTableViewCell: UITableViewCell {
         phoneLabel.text = model.contactPhone
         mailLabel.text = model.contactMail
         
-        guard let data = model.contactImage, let image = UIImage(data: data) else {return}
-        userImageView.image = image
+        if let data = model.contactImage, let image = UIImage(data: data) {
+            userImageView.image = image
+        } else {
+            userImageView.image = UIImage(named: "catAvatar")
+        }
     }
     
     
