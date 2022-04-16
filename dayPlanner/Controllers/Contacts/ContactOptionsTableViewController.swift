@@ -14,11 +14,12 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
     private let idOptionsContactHeader = "idOptionsContactHeader"
     
     private let headerNameArray = ["Name", "Phone", "Mail", "Type", "Choose image"]
-    private var cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
+    var cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
     private var imageIsChanged = false
     var contactModel = ContactModel()
     var isEditModel = false
+    var dataImage: Data?
     
     
     let colorPicker = UIColorPickerViewController()
@@ -39,17 +40,26 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
     }
     
     @objc private func handlePressSave() {
-        if contactModel.contactName == "Unknown" || contactModel.contactType == "Unknown" {
+        if cellNameArray[0] == "Name" || cellNameArray[3] == "Type" {
             alertSuccessful(title: "Error", message: "Required fields: Name and Type")
         } else {
             setImageModel()
-            
+            setModel()
+            print("contact model", contactModel)
             RealmManager.shared.saveContactModel(model: contactModel)
             contactModel = ContactModel()
             
             alertSuccessful(title: "Success", message: nil)
             tableView.reloadData()
         }
+    }
+    
+    private func setModel() {
+        contactModel.contactName = cellNameArray[0]
+        contactModel.contactPhone = cellNameArray[1]
+        contactModel.contactMail = cellNameArray[2]
+        contactModel.contactType = cellNameArray[3]
+        contactModel.contactImage = dataImage
     }
     
     func setImageModel() {
@@ -59,12 +69,12 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
             
             let image = cell.backgroundViewCell.image
             guard let imageData = image?.pngData() else {return}
-            contactModel.contactImage = imageData
+            dataImage = imageData
             
             cell.backgroundViewCell.contentMode = .scaleAspectFit
             imageIsChanged = false
         } else {
-            contactModel.contactImage = nil
+            dataImage = nil
         }
     }
     
@@ -76,21 +86,13 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactCell, for: indexPath) as! OptionsTableViewCell
-        
-        if isEditModel {
-            cellNameArray = [
-                contactModel.contactName,
-                contactModel.contactPhone,
-                contactModel.contactMail,
-                contactModel.contactType,
-                ""
-            ]
-            cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath)
+        if isEditModel == false {
+            cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath, image: nil)
+        } else if let data = contactModel.contactImage, let image = UIImage(data: data) {
+            cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath, image: image)
         } else {
-            cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath)
-        }
-        
-       
+            cell.setUpCellContact(nameArray: cellNameArray, indexPath: indexPath, image: nil)
+        }       
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -116,19 +118,24 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
         switch indexPath.section {
         case 0:
             alertCellName(label: cell.nameCellLabel, name: "User name", placeholder: "Steve Jobs") { text in
-                self.contactModel.contactName = text
+//                self.contactModel.contactName = text
+                self.cellNameArray[0] = text
+                
             }
         case 1:
             alertCellName(label: cell.nameCellLabel, name: "User phone", placeholder: "Enter phone") { text in
-                self.contactModel.contactPhone = text
+//                self.contactModel.contactPhone = text
+                self.cellNameArray[1] = text
             }
         case 2:
             alertCellName(label: cell.nameCellLabel, name: "User mail", placeholder: "Enter mail") { text in
-                self.contactModel.contactMail = text
+//                self.contactModel.contactMail = text
+                self.cellNameArray[2] = text
             }
         case 3:
             alertOfUsers(label: cell.nameCellLabel) { (type) in
-                self.contactModel.contactType = type
+//                self.contactModel.contactType = type
+                self.cellNameArray[3] = type
             }
         case 4:
             alertPhotoCamera { source in

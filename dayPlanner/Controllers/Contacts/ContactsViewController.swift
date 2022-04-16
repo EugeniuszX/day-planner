@@ -79,7 +79,7 @@ class ContactsViewController: UIViewController, UIColorPickerViewControllerDeleg
             contactsArray = localRealm.objects(ContactModel.self).filter("contactType == 'User'")
             tableView.reloadData()
         } else {
-            contactsArray = localRealm.objects(ContactModel.self).filter("contactType == 'Teacher'")
+            contactsArray = localRealm.objects(ContactModel.self).filter("contactType == 'Stranger'")
             tableView.reloadData()
         }
     }
@@ -93,6 +93,13 @@ class ContactsViewController: UIViewController, UIColorPickerViewControllerDeleg
         let contactOption = ContactOptionsTableViewController()
         contactOption.contactModel = contactModel
         contactOption.isEditModel = true
+        contactOption.cellNameArray = [
+            contactModel.contactName,
+            contactModel.contactPhone,
+            contactModel.contactMail,
+            contactModel.contactType,
+            ""
+        ]
         navigationController?.pushViewController(contactOption, animated: true)
     }
 

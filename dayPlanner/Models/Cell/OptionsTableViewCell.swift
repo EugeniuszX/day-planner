@@ -15,6 +15,7 @@ class OptionsTableViewCell: UITableViewCell {
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -55,7 +56,7 @@ class OptionsTableViewCell: UITableViewCell {
     
     func setUpCellPlanner(arrayOfNames: [[String]], indexPath: IndexPath) {
         nameCellLabel.text = arrayOfNames[indexPath.section][indexPath.row]
-        
+
         if indexPath == [3,0] {
             backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         }
@@ -73,11 +74,19 @@ class OptionsTableViewCell: UITableViewCell {
     }
     
     
-    func setUpCellContact(nameArray: [String], indexPath: IndexPath) {
+    func setUpCellContact(nameArray: [String], indexPath: IndexPath, image: UIImage?) {
         nameCellLabel.text = nameArray[indexPath.section]
         
+        
         if indexPath.section == 4 {
-            backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus")
+            backgroundViewCell.contentMode = .scaleAspectFill
+        if image != nil {
+            backgroundViewCell.image = image
+            return
+        }
+        
+        backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus")
+            
         }
     }
     
