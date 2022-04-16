@@ -105,7 +105,7 @@ class TaskOptionsTableView: UITableViewController, UIColorPickerViewControllerDe
             colorCell = cell
            present(colorPicker, animated: true)
         default:
-            print("")
+        print()
         }
     }
     

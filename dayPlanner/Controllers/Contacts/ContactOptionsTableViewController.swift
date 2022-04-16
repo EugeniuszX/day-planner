@@ -45,10 +45,10 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
         } else {
             setImageModel()
             setModel()
-            print("contact model", contactModel)
             RealmManager.shared.saveContactModel(model: contactModel)
             contactModel = ContactModel()
             
+            cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
             alertSuccessful(title: "Success", message: nil)
             tableView.reloadData()
         }

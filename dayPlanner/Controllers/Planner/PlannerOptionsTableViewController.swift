@@ -46,7 +46,6 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
         
         if plannerModel.plannerDate == nil || plannerModel.plannerTime == nil || plannerModel.plannerName == "Unknown" {
             alertSuccessful(title: "Error", message: "Required fields: date, time, name")
-            
             return
         }
         
@@ -56,6 +55,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
         cellNameArray[2][0] = "User name"
         alertSuccessful(title: "Success", message: nil)
         tableView.reloadRows(at: [[0,0],[0,1], [1,0],[1,1],[2,0],[3,0],[3,1], [4 ,0]], with: .fade)
+       
     }
    override func numberOfSections(in tableView: UITableView) -> Int {
        return 5
@@ -116,7 +116,7 @@ class PlannerOptionsTableViewController: UITableViewController, UIColorPickerVie
             colorCell = cell
            present(colorPicker, animated: true)
         default:
-            print("")
+            print()
         }
     }
     
