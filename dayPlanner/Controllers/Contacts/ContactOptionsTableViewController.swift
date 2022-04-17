@@ -16,7 +16,7 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
     private let headerNameArray = ["Name", "Phone", "Mail", "Type", "Choose image"]
     var cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
-    private var imageIsChanged = false
+    var imageIsChanged = false
     var contactModel = ContactModel()
     var isEditModel = false
     var dataImage: Data?
@@ -42,7 +42,7 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
     @objc private func handlePressSave() {
         if cellNameArray[0] == "Name" || cellNameArray[3] == "Type" {
             alertSuccessful(title: "Error", message: "Required fields: Name and Type")
-        } else {
+        } else if isEditModel == false {
             setImageModel()
             setModel()
             RealmManager.shared.saveContactModel(model: contactModel)
@@ -51,6 +51,13 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
             cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
             alertSuccessful(title: "Success", message: nil)
             tableView.reloadData()
+        } else {
+            setImageModel()
+            RealmManager.shared.updateContactModel(model: contactModel, nameArray: cellNameArray, imageData: dataImage)
+            self.navigationController?.popViewController(animated: true)
+            
+            tableView.reloadData()
+            
         }
     }
     

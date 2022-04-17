@@ -100,6 +100,7 @@ class ContactsViewController: UIViewController, UIColorPickerViewControllerDeleg
             contactModel.contactType,
             ""
         ]
+        contactOption.imageIsChanged = true
         navigationController?.pushViewController(contactOption, animated: true)
     }
 

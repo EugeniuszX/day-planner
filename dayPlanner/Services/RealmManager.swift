@@ -48,10 +48,19 @@ class RealmManager {
             localRealm.delete(model)
         }
     }
-    
+    func updateContactModel(model: ContactModel, nameArray: [String], imageData: Data?) {
+        try! localRealm.write {
+            model.contactName = nameArray[0]
+            model.contactPhone = nameArray[1]
+            model.contactMail = nameArray[2]
+            model.contactType = nameArray[3]
+            model.contactImage = imageData
+        }
+    }
     func updateReadyButtonTaskModel(task: TaskModel, bool: Bool) {
         try! localRealm.write {
             task.isTaskDone = bool
         }
     }
+    
 }
