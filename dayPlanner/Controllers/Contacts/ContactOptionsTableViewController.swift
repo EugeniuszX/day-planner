@@ -55,7 +55,7 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
             setImageModel()
             RealmManager.shared.updateContactModel(model: contactModel, nameArray: cellNameArray, imageData: dataImage)
             self.navigationController?.popViewController(animated: true)
-            
+                
             tableView.reloadData()
             
         }
