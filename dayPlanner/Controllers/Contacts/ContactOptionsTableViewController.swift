@@ -125,23 +125,19 @@ class ContactOptionsTableViewController: UITableViewController, UIColorPickerVie
         switch indexPath.section {
         case 0:
             alertCellName(label: cell.nameCellLabel, name: "User name", placeholder: "Steve Jobs") { text in
-//                self.contactModel.contactName = text
                 self.cellNameArray[0] = text
                 
             }
         case 1:
             alertCellName(label: cell.nameCellLabel, name: "User phone", placeholder: "Enter phone") { text in
-//                self.contactModel.contactPhone = text
                 self.cellNameArray[1] = text
             }
         case 2:
             alertCellName(label: cell.nameCellLabel, name: "User mail", placeholder: "Enter mail") { text in
-//                self.contactModel.contactMail = text
                 self.cellNameArray[2] = text
             }
         case 3:
             alertOfUsers(label: cell.nameCellLabel) { (type) in
-//                self.contactModel.contactType = type
                 self.cellNameArray[3] = type
             }
         case 4:
