@@ -19,20 +19,7 @@ class PlannerViewController: UIViewController {
         return calendar
     }()
     
-    private let toggleVisibleButton: UIButton = {
-     let button = UIButton()
-        button.tintColor = .systemTeal
-        button.setTitle("Open calendar", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setBackgroundImage(.pixel(ofColor: .systemBlue), for: .normal)
-        button.layer.cornerRadius = 20
-        button.layer.masksToBounds = true
-        
-       
-        return button
-    }()
-    
+    private let toggleVisibleButton: UIButton = UIButton().createSwitchButton()
   
     
    private let tableView: UITableView = {
@@ -192,7 +179,7 @@ extension PlannerViewController {
             toggleVisibleButton.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 0),
             toggleVisibleButton.heightAnchor.constraint(equalToConstant: 48),
             toggleVisibleButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            toggleVisibleButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),         
+            toggleVisibleButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
         ])
         
         
