@@ -33,7 +33,5 @@ class MainTabBarController: UITabBarController {
         
         return navigationController
     }
-
-
 }
 
